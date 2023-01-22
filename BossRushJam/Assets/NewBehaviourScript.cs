@@ -7,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // mogsod
+       // mogsod cambio x
     }
 
     // Update is called once per frame
@@ -16,3 +16,4 @@ public class NewBehaviourScript : MonoBehaviour
         
     }
 }
+
