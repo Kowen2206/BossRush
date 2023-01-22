@@ -13,23 +13,17 @@
 ### Scripting:
 -------------
    - ##### Public Variables:
-     PascalCase
+     camelCase
 	
    
 
-	public int NumberVariable;
+	public int numberVariable;
 
    - ##### Private Variables: 
-     camelCase
+     _camelCase with an underscore at the start.
  
 
-	private int numberVariable;
-
-- ##### Serialized Variables: 
-    camelCase with an underscore at the start.
-
-
-		[SerializeField] private int _numberVariable;
+	private int _numberVariable;
 
 - ##### Constants:
     SNAKE_CASE
@@ -60,14 +54,14 @@
     PascalCase, name starting with On(NameOfTheEvent)Event.
    
 
-         public UnityEvent OnLandEvent;
+         public UnityEvent OnJumpEvent;
 
 ### Github:
 -------------
 #### Branchs:
 
 - ##### Branch "Main"
-	This branch will have the last finished features, and only will be merged once the feature is ready and the developer is shure their code wont cause any 	conflict or bug.
+	This branch will have the last finished features, and only will be merged once the development code is ready and the developers team is shure their code wont cause any 	conflict or bug.
 
 - ##### Branch "Develpment"
 	The whole team will work under this branch
@@ -75,7 +69,7 @@
 
 
 - ##### Feature branchs:
-	Every feature will have their own branch using the next nomenclature
+	Every feature will have their own branch using the next nomenclature, this branchs will be merge just by a pull request
  
 
-    	Feature/FeatureName
+    	FeatureFeatureName
