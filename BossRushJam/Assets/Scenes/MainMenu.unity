@@ -2349,9 +2349,8 @@ MonoBehaviour:
   VolumeMusic: {fileID: 0}
   Mute: {fileID: 0}
   MainMenu: {fileID: 1999599356}
-  SettingsMenu: {fileID: 2145993641}
+  SettingsMen: {fileID: 2145993641}
   KeyBoardImage: {fileID: 1145390258}
-  Origin: {fileID: 2147477737}
 --- !u!114 &1145390260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3572,9 +3571,8 @@ MonoBehaviour:
   VolumeMusic: {fileID: 414418914}
   Mute: {fileID: 752316644}
   MainMenu: {fileID: 1999599356}
-  SettingsMenu: {fileID: 2145993641}
+  SettingsMen: {fileID: 2145993641}
   KeyBoardImage: {fileID: 338377162}
-  Origin: {fileID: 2147477737}
 --- !u!1 &2022908443
 GameObject:
   m_ObjectHideFlags: 0
@@ -3971,7 +3969,7 @@ GameObject:
   - component: {fileID: 2145993644}
   - component: {fileID: 2145993643}
   m_Layer: 5
-  m_Name: SettingsMenu
+  m_Name: SettingsMen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4021,9 +4019,8 @@ MonoBehaviour:
   VolumeMusic: {fileID: 414418914}
   Mute: {fileID: 752316644}
   MainMenu: {fileID: 1999599356}
-  SettingsMenu: {fileID: 2145993641}
+  SettingsMen: {fileID: 2145993641}
   KeyBoardImage: {fileID: 1145390258}
-  Origin: {fileID: 2147477737}
 --- !u!114 &2145993644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4097,7 +4094,6 @@ GameObject:
   - component: {fileID: 2147477740}
   - component: {fileID: 2147477739}
   - component: {fileID: 2147477738}
-  - component: {fileID: 2147477742}
   m_Layer: 5
   m_Name: Origin
   m_TagString: Untagged
@@ -4189,22 +4185,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2147477742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147477737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9a8e1814e1322c42a2852ce8abc1b29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VolumeFX: {fileID: 926506473}
-  VolumeMusic: {fileID: 414418914}
-  Mute: {fileID: 752316644}
-  MainMenu: {fileID: 1999599356}
-  SettingsMenu: {fileID: 2145993641}
-  KeyBoardImage: {fileID: 1145390258}
-  Origin: {fileID: 2147477737}
