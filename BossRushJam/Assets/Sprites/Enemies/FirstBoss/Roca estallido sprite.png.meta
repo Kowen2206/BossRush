@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: 39e6c6b6137e7244d9fca7e7ec8db26c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Roca estallido sprite_13
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 102
+        width: 114
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c471b592826448c4e84a14db899a9bd7
+      internalID: -1049972870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roca estallido sprite_55
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 90
+        width: 196
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d468a8d76742c4395ebf6428e1dd82
+      internalID: 309392845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roca estallido sprite_60
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 6
+        width: 275
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072a75577e2ed8a43be51f2dec4a2c2a
+      internalID: 1085794742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Roca estallido sprite_60: 1085794742
+      Roca estallido sprite_0: 756168771
+      Roca estallido sprite_13: -1049972870
+      Roca estallido sprite_6: -1686827121
+      Roca estallido sprite_56: -1335922997
+      Roca estallido sprite_28: -241312857
+      Roca estallido sprite_35: 1932771627
+      Roca estallido sprite_21: 1957756805
+      Roca estallido sprite_32: 1913072894
+      Roca estallido sprite_9: 336337979
+      Roca estallido sprite_34: -1169868868
+      Roca estallido sprite_8: -1944179411
+      Roca estallido sprite_17: 1436255049
+      Roca estallido sprite_39: 1249987071
+      Roca estallido sprite_10: -2106103412
+      Roca estallido sprite_44: 132501424
+      Roca estallido sprite_54: 1287822918
+      Roca estallido sprite_53: 722431437
+      Roca estallido sprite_45: 1032408251
+      Roca estallido sprite_43: 1931922136
+      Roca estallido sprite_31: 1400600318
+      Roca estallido sprite_22: 53166682
+      Roca estallido sprite_14: -782247530
+      Roca estallido sprite_58: 1536371303
+      Roca estallido sprite_40: 250945679
+      Roca estallido sprite_57: -656506764
+      Roca estallido sprite_23: -113828638
+      Roca estallido sprite_1: 495946038
+      Roca estallido sprite_48: 1214431630
+      Roca estallido sprite_49: 2063105735
+      Roca estallido sprite_25: 766227908
+      Roca estallido sprite_42: 877938973
+      Roca estallido sprite_27: -539678249
+      Roca estallido sprite_37: -98545096
+      Roca estallido sprite_55: 309392845
+      Roca estallido sprite_59: 1982753283
+      Roca estallido sprite_51: -619552697
+      Roca estallido sprite_11: 1292930244
+      Roca estallido sprite_26: 348746500
+      Roca estallido sprite_30: 1658875129
+      Roca estallido sprite_33: -16025423
+      Roca estallido sprite_5: 721568952
+      Roca estallido sprite_4: 856702965
+      Roca estallido sprite_38: -525618925
+      Roca estallido sprite_50: -1372908205
+      Roca estallido sprite_15: -435864968
+      Roca estallido sprite_20: -1139964819
+      Roca estallido sprite_41: -2029453
+      Roca estallido sprite_2: 1977288218
+      Roca estallido sprite_24: -1676525717
+      Roca estallido sprite_3: -280548386
+      Roca estallido sprite_52: 1168580709
+      Roca estallido sprite_36: 185103121
+      Roca estallido sprite_19: 1800087080
+      Roca estallido sprite_46: -1590508043
+      Roca estallido sprite_7: -1754549963
+      Roca estallido sprite_12: 344001233
+      Roca estallido sprite_16: 308034352
+      Roca estallido sprite_29: 895312913
+      Roca estallido sprite_18: -1841182821
+      Roca estallido sprite_47: -728968674
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

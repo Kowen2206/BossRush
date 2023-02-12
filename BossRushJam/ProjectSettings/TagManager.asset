@@ -3,12 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FollowSwarm
+  - BeeShield
+  - collisionObject
+  - Boss
+  - Proyectil
+  - SwarmProyectil
+  - BossTrayectoryLine
+  - TrayectoryLine
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - navMeshSurface
   - Water
   - UI
   - 
