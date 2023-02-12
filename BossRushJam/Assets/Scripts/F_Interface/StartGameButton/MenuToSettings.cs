@@ -2,26 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.ParticleSystemJobs;
 public class MenuToSettings : MonoBehaviour
 {
     private string [] TextOptions = new string[3];
+    [SerializeField] private ParticleSystem Acid;
+ 
 // Variables para el movimiento de la interfaz
     [Header("options")]
-    public Slider VolumeFX;
     public Slider VolumeMusic;
+    public Slider VolumeFX;
     public Toggle Mute;
 
     [Header("menus")]
     public GameObject MainMenu;
-    public GameObject SettingsMen;
+    public GameObject SettingsMenu;
     public GameObject KeyBoardImage;
+
     
-    void Start()
+    
+    private void Start()
     {
         MainMenu.SetActive(true);
-        SettingsMen.SetActive(false);
+        SettingsMenu.SetActive(false);
         KeyBoardImage.SetActive(false);
+
+        
+        Acid.Play();
+
+
        
 
     //Textos a lo random
@@ -35,10 +44,10 @@ public class MenuToSettings : MonoBehaviour
         
      }
 
-     public void OpenPanel(GameObject Menu)
+     private void OpenPanel(GameObject Menu)
     {
         MainMenu.SetActive(false);
-        SettingsMen.SetActive(false);
+        SettingsMenu.SetActive(false);
         KeyBoardImage.SetActive(false);
     
         Menu.SetActive(true);
