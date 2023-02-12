@@ -43,4 +43,9 @@ public class HealtController : MonoBehaviour
             _currentHealt = _initialHealt;
         }
    }
+
+   public void GetHealtPercentage()
+   {
+        _healtPercentage = _currentHealt * 100/ _initialHealt;
+   }
 }
