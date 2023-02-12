@@ -7,33 +7,46 @@ using UnityEngine.Events;
 
 public class Boss : MonoBehaviour
 {
+    //Todo: Crear función para detener attaques en seco.
+    //Configurar velocidad en función del ataque
+    //Agregar sonidos
     [SerializeField] protected  NavMeshAgent _agent;
-    //TargetPlace represents the coordinates in the world of the place that the boss have to arrive.
-    //_keyPointsCoordinatesParent is a gameObject parent of a points in the map, they are used to select random positions o the map
+    //TargetPlace represents the coordinates in the world where the boss have to arrive.
+    //_keyPointsCoordinatesParent is a gameObject parent of a especific points in the map, they are used to select random positions on the map
     [SerializeField] protected Transform _keyPointsCoordinatesParent, _proyectilSpawnPoint, _bossRestPoint;
     [SerializeField] protected GameObject _player;
-    protected bool _isDie, _makeDamageOnTouch;
+    public bool proofOneAttack, seriousDamage;
+    protected bool _isDie, _makeDamage;
     //Todo: _defaultSpeed will be use to the speed of the boss depending on phase or attack
-    [SerializeField] protected float _defaultSpeed, _damageOnTouch, _actionDelay = 10;
+    [SerializeField] protected float _defaultSpeed, _currentSpeed, _damageOnTouch, _actionDelay = 10, _damageRecoverTime;
     protected Vector3 _lastPlayerPosition, lastAttackPreparationPosition = Vector3.zero;
     //In order to avoid conflicts with _agent when is disable, _isCheckingPath avoid check the _agent position in update method.
     public static bool _isCheckingPhat = false;
-    protected int _currentPhase = 0, _remainingAttack = 0;
+    [SerializeField] protected int _currentPhase = 0, _remainingAttack = 0;
     protected delegate void ExecutAttack();
-    protected ExecutAttack actionDelegate;
+    protected ExecutAttack AttackDelegate, FinishAttackDelegate;
     protected delegate void OnPlaceAction();
     protected OnPlaceAction onPlaceActionDelegate;
     [SerializeField] protected PhaseAttacks[] _attacksList;
     [SerializeField] protected SpriteRenderer _spriteRenderer;
-    protected string _lastAttack = "";
-    [SerializeField] protected UnityEvent OnDie, OnPrepareToAttack, OnFinisAttackRound, OnFinishAttack, OnFinishPhase;
+   [SerializeField] protected string _lastAttack = "";
+    [SerializeField] protected UnityEvent OnDie, OnFinishAttack, OnWalk, OnRun, OnStopWalk, OnStopRun, OnTackle, OnStartJump;
+    [SerializeField] protected UnityEvent OnThrowProyectil, OnFinishThrowProyectil, OnStopInFollow, OnContinueInFollow;
+    [SerializeField] protected AnimationsBoss _animationBoss;
+    [SerializeField] protected List<GameObject> _currentProyectils = new List<GameObject>();
+    TrayectoryLine _trayectoryLine;
+    [SerializeField] GameObject _line;
+
     
     //This method must be called in the Start Method of every child
     protected void InitialiceBoos()
     {
-        ChoseRandomAttack();
+        _animationBoss = GetComponent<AnimationsBoss>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
+        ChoseRandomAttack();
+        _trayectoryLine =  _line.GetComponent<TrayectoryLine>();
+        _trayectoryLine.enabled = false;
     }
 
     //This method will be a virtual method that must be override on the children clases
@@ -45,10 +58,11 @@ public class Boss : MonoBehaviour
     protected string GetAttackNameByPhase()
     {
         PhaseAttacks attack = _attacksList[UnityEngine.Random.Range(0, _attacksList.Length)];
-        while(attack.Phase != _currentPhase && attack.name == _lastAttack)
+        while(attack.Phase != _currentPhase || attack.name == _lastAttack)
         {
             attack = _attacksList[UnityEngine.Random.Range(0, _attacksList.Length)];
         }
+        if(!proofOneAttack) _lastAttack = attack.name;
         return attack.name;
     }    
 
@@ -59,13 +73,10 @@ public class Boss : MonoBehaviour
         -   attacDelay: The time that the boss will take to attack after gets in the corresponding place.
         -   attackCount: number of times that the boss will repeat the attack.
     */
-    protected void ConfigureAttack(OnPlaceAction[] onPlaceFunctions, ExecutAttack attackFunction, float attackDelay = 2, int attackCount = 4)
+    protected void ConfigureAttack(OnPlaceAction onPlaceFunction, ExecutAttack attackFunction, float attackDelay = 2, int attackCount = 4)
     {
-        actionDelegate = attackFunction;
-        foreach (OnPlaceAction func in onPlaceFunctions)
-        {
-            onPlaceActionDelegate += func;
-        }
+        AttackDelegate = attackFunction;
+        onPlaceActionDelegate = onPlaceFunction;
         _actionDelay = attackDelay;
         _remainingAttack = attackCount;
     }
@@ -75,6 +86,17 @@ public class Boss : MonoBehaviour
         _isCheckingPhat = true;
         _agent.enabled = true;
         if(!shortAttack) SetDistanceAttackPlace(); else SetShortAttackPlace();
+    }
+
+    public void ReciveSeriousDamage()
+    {
+        StopAllCoroutines();
+        _agent.enabled = false;
+        _remainingAttack = 0;
+        FinishAttackDelegate = null;
+        onPlaceActionDelegate = null;
+        StartCoroutine(RecoverOfDamageRoutine(_damageRecoverTime));
+
     }
 
     //If is necesary, Boss will set a specific distance with the player in order to prepare to attack 
@@ -91,17 +113,16 @@ public class Boss : MonoBehaviour
         if(speed == 0) speed = _defaultSpeed;
         _isCheckingPhat = true;
         _agent.SetDestination(GetRandomMapCoordinate(true));
+        OnWalk?.Invoke();
     }
-
-
-    
 
     protected void CheckBossPath()
     {
         if (_agent.remainingDistance - _agent.stoppingDistance < 0.1f && !_agent.pathPending && _isCheckingPhat)
         {
             _isCheckingPhat = false;
-            
+            StopAllCoroutines();
+            OnStopWalk?.Invoke();
             onPlaceActionDelegate?.Invoke();
         }
     }
@@ -140,7 +161,8 @@ public class Boss : MonoBehaviour
     IEnumerator BossAttackDelayRoutine()
     {
         yield return new WaitForSeconds(_actionDelay);
-        actionDelegate?.Invoke();
+        AttackDelegate?.Invoke();
+        
     }
 
     //This metod will be called by the event OnReciveDamage in HealtController.
@@ -167,65 +189,115 @@ public class Boss : MonoBehaviour
         }
         else
         {
+            Debug.Log("ShouldStartNextAttack");
+            FinishAttackDelegate = null;
+            onPlaceActionDelegate = null;
             onPlaceActionDelegate = ChoseRandomAttack;
             _agent.enabled = true;
             SetDistanceAttackPlace();
         }
     }
 
-    protected IEnumerator TackleRoutine(float tackleSpeed)
+    protected IEnumerator TackleRoutine(float tackleSpeed, float tackleDelay)
     {
+        OnTackle?.Invoke();
+        yield return new WaitForSeconds(tackleDelay);
+        _lastPlayerPosition = _player.transform.position;
         //Todo: Agregar que al chocar contra ciertas estructuras u bojetos, el boss sea stuned por un x tiempo. 
         while(transform.position != _lastPlayerPosition)
         {
-            Debug.Log("ExecutingWhile");
             transform.position = Vector3.MoveTowards(transform.position, _lastPlayerPosition, Time.deltaTime * tackleSpeed);
-             yield return null;
-        }
-
-        Debug.Log("Finish Tackle"); 
+            yield return null;
+        } 
         OnFinishAttack?.Invoke();
         CountAttacks();
     }
 
     protected IEnumerator ThrowProyectilRoutine( GameObject proyectil, int proyectilCount, float proyectilDelay = 1.5f)
     {
+        OnThrowProyectil?.Invoke();
         while(proyectilCount > 0)
         {
-            
-            Instantiate(proyectil, _proyectilSpawnPoint.position, Quaternion.identity);
             yield return new WaitForSeconds(proyectilDelay);
-            
+            Instantiate(proyectil, _proyectilSpawnPoint.position, Quaternion.identity);
             proyectilCount--;
         }
         OnFinishAttack?.Invoke();
         CountAttacks();
     }
 
+    protected IEnumerator RecoverOfDamageRoutine(float recoverTime)
+    {
+        _animationBoss.SeriousDamageAnim();
+        yield return new WaitForSeconds(recoverTime);
+        _animationBoss.RecoverForDamage(true);
+        StartCoroutine(WaitUnitlFinishAnimationRoutine("FinishRecover", true));
+    }
+
     protected IEnumerator FollowPlayerRoutine(float followDuration)
     {
-        _spriteRenderer.color = new Color(255,0,0);
         while(followDuration > 0)
         {
             yield return new WaitForSeconds(1);
             _agent.SetDestination(_player.transform.position);
             followDuration--;
         }
-        _spriteRenderer.color = new Color(255,255,255);
+        OnFinishAttack?.Invoke();
+        FinishAttackDelegate?.Invoke();
         CountAttacks();
     }
 
-    protected IEnumerator FollowPlayerWithStopsRoutine(float stopDelay)
+    protected IEnumerator FollowPlayerWithStopsRoutine(float stopDelay, int stopsQuantity, float followSpeed)
     {
-        _lastPlayerPosition = _player.transform.position;
-        _agent.SetDestination(_lastPlayerPosition);
-        
-        while(transform.position != _lastPlayerPosition)
+        _spriteRenderer.color = new Color(255,0,0);
+        BoxCollider2D playerCollider = _player.GetComponent<BoxCollider2D>();
+        Proyectil BossProyectil = GetComponent<Proyectil>();
+        _agent.enabled = false;
+        while(stopsQuantity > 0)
         {
-            yield return null;
+            OnContinueInFollow?.Invoke();
+            yield return new WaitForSeconds(stopDelay);
+           // transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, Time.deltaTime * followSpeed);
+            BossProyectil.ProyectilSpeed = followSpeed;
+            HideTrayectoryLine();
+            BossProyectil.StartShoot();
+            yield return new WaitUntil( () => BossProyectil.IsInTargetPosition);
+            //Todo: activar daño cuando ocurre la animación de caida con animation events
+            OnStopInFollow?.Invoke();
+            yield return new WaitForSeconds(_animationBoss.GetAnimationLength("FinishJump"));
+            stopsQuantity--;
         }
-        yield return new WaitForSeconds(stopDelay);
+        OnFinishAttack?.Invoke();
         CountAttacks();
+    }
+
+    protected IEnumerator WaitUnitlFinishAnimationRoutine(string animationName, bool countAttack = true)
+    {
+        yield return new WaitForSeconds(_animationBoss.GetAnimationLength(animationName));
+        if(countAttack)
+        CountAttacks();
+    }
+
+    public void InstantiateObject()
+    {
+        if(_currentProyectils.Count == 1)
+        Instantiate(_currentProyectils[0], transform.position, Quaternion.identity);
+        if(_currentProyectils.Count > 1)
+        Instantiate(_currentProyectils[UnityEngine.Random.Range(0, _currentProyectils.Count)], transform.position, Quaternion.identity);
+    }
+
+    public void UseTrayectoryLine()
+    {
+        //_line.transform.position = new Vector3(transform.position.x + 0.76f, transform.position.y, 1);
+        //_line.transform.localPosition = new Vector3(0, 0, 1);
+        _trayectoryLine.enabled = true;
+        
+       // _trayectoryLine.StartGrowing();
+    }
+
+    public void HideTrayectoryLine()
+    {
+        _trayectoryLine.enabled = false;
     }
 
     [Serializable]

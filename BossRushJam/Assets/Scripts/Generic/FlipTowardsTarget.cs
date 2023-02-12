@@ -6,7 +6,6 @@ public class FlipTowardsTarget : MonoBehaviour
 {
     [SerializeField] Transform _target;
     [SerializeField] bool _toggleDirection, _lookingAtTarget = true;
-    [SerializeField] bool  _lookingAtMoveDirection = false;
     Vector3 _lastPosition;
     SpriteRenderer _spriteRenderer;
     
@@ -43,6 +42,7 @@ public class FlipTowardsTarget : MonoBehaviour
         {
             CalculateFlipDirection(_lastPosition, transform.position);
         }
+        _lastPosition = transform.position;
     }
 
     void CalculateFlipDirection(Vector3 pointA, Vector3 pointB)
