@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Control_1
+      name: Control_0
       rect:
         serializedVersion: 2
         x: 235
         y: 22
-        width: 166
-        height: 103
+        width: 165
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c747e2259e4f9246a9866059501086d
-      internalID: 939972489
+      spriteID: 59fed90934621744ab63379c25aa2544
+      internalID: -518276526
       vertices: []
       indices: 
       edges: []
@@ -149,7 +149,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Control_0: -518276526
-      Control_1: 939972489
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

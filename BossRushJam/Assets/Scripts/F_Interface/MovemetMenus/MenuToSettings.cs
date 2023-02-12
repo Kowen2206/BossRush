@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.ParticleSystemJobs;
 public class MenuToSettings : MonoBehaviour
 {
-    private string [] TextOptions = new string[3];
-    [SerializeField] private ParticleSystem Acid;
- 
+    public GameObject[] ControlMusica;
+    public GameObject[] ControlFX;
+
 // Variables para el movimiento de la interfaz
     [Header("options")]
     public Slider VolumeMusic;
@@ -19,29 +18,23 @@ public class MenuToSettings : MonoBehaviour
     public GameObject SettingsMenu;
     public GameObject KeyBoardImage;
 
-    
-    
     private void Start()
     {
         MainMenu.SetActive(true);
         SettingsMenu.SetActive(false);
         KeyBoardImage.SetActive(false);
-
-        
-        Acid.Play();
-
-
-       
-
-    //Textos a lo random
-    TextOptions[0] = "Made in Mexico";
-    TextOptions[1] = "¡Lucha lucha!";
-    TextOptions[2] = "¡Rompe las cajas!";
-
-    
-
-
-        
+        //Control de Audio
+        ControlMusica = GameObject.FindGameObjectsWithTag("Musicas");
+        VolumeMusic.value = PlayerPrefs.GetFloat("MusicSave", 1f);
+     }
+     private void update()
+     {
+        foreach (GameObject au in ControlMusica)
+        au.GetComponent<AudioSource>().volume = VolumeMusic.value;
+     }
+     public void GuardarVolumen()
+     {
+        PlayerPrefs.SetFloat("MusicSave", VolumeMusic.value);
      }
 
      private void OpenPanel(GameObject Menu)
