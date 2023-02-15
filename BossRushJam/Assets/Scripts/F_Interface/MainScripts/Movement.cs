@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Animations;
 
 public class Movement : MonoBehaviour
 {
@@ -12,14 +11,8 @@ public class Movement : MonoBehaviour
     public GameObject SettingsMenu;
     public GameObject KeyBoardImage;
     public GameObject Fade;
-    void awake()
-    {
-        SettingsMenu.SetActive(false);
-        KeyBoardImage.SetActive(false);
-        MainMenu.SetActive(true);
-        Fade.gameObject.SetActive(false);
         
-    }
+    
     public void mainMenu()
     {
         MainMenu.SetActive(true);
@@ -38,6 +31,10 @@ public class Movement : MonoBehaviour
         SettingsMenu.SetActive(false);
         MainMenu.SetActive(false);
     }
+public void Quit()
+{
+    Application.Quit();
+}
     
 
 
