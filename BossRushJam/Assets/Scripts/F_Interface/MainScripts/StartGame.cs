@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class StartGame : MonoBehaviour
 {
    //Metodo publico para el boton PlayGame
@@ -10,7 +10,14 @@ public class StartGame : MonoBehaviour
    {
     Debug.Log("Iniciando juego");
     SceneManager.LoadScene(1);
-
+    StartCoroutine(StartingGame()); 
    }
+   IEnumerator StartingGame()
+   {
+     yield return new WaitForSeconds(2f);
+     SceneManager.LoadScene(2);
+   }
+
+
    
 }
