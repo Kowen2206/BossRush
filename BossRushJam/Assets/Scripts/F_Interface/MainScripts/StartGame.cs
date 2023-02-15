@@ -9,14 +9,8 @@ public class StartGame : MonoBehaviour
    public void Play()
    {
     Debug.Log("Iniciando juego");
-    StartCoroutine(StartingGame()); 
     SceneManager.LoadScene(1);
     
-   }
-   IEnumerator StartingGame()
-   {
-     yield return new WaitForSeconds(1.0f);
-     SceneManager.LoadScene(2);
    }
 
 
