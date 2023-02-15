@@ -3270,7 +3270,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450314203}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7968fb3cc2706ad4cbfe57ce2df299ba, type: 3}
@@ -4346,7 +4346,6 @@ RectTransform:
   - {fileID: 484736586}
   - {fileID: 575847546}
   - {fileID: 1569062739}
-  - {fileID: 2101766360}
   m_Father: {fileID: 2147477741}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4789,16 +4788,16 @@ RectTransform:
   m_GameObject: {fileID: 2101766359}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.4510002, y: 2.4510002, z: 2.4510002}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1999599360}
-  m_RootOrder: 7
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -0.000030517578}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 391.67682, y: 220.3182}
+  m_SizeDelta: {x: 799.99994, y: 449.99997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2101766361
 Animator:
@@ -4833,7 +4832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5097,6 +5096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a8e1814e1322c42a2852ce8abc1b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2101766361}
   SliderValue: 0
   ImagenMute: {fileID: 1293655847}
   VolumeMusic: {fileID: 414418914}
@@ -5105,3 +5105,4 @@ MonoBehaviour:
   MainMenu: {fileID: 1999599356}
   SettingsMenu: {fileID: 2145993641}
   KeyBoardImage: {fileID: 1145390258}
+  Fade: {fileID: 2101766359}
