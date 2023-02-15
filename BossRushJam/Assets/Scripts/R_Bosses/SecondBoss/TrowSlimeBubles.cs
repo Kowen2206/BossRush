@@ -5,49 +5,49 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class TrowSlimeBubles : MonoBehaviour
 {
-    GameObject _bublePrefab;
+    [SerializeField] GameObject _bublePrefab;
     [SerializeField] int _bublesCount = 3;
-    [SerializeField] float _bublesTimeDelay;
+    [SerializeField] float _bublesTimeDelay, _wallsOffset;
+    [SerializeField] bool _throwBubles;
     BoxCollider2D _collider;
     float _colliderHeight;
+    int initialBublesCount;
 
+    void Update()
+    {
+        if(_throwBubles)
+        {
+            _throwBubles = false;
+            StartCoroutine(createBublesSlimeRoutine());
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        initialBublesCount = _bublesCount;
         _collider = GetComponent<BoxCollider2D>();
         _colliderHeight = _collider.size.y;
     }
+    //checar becas de movilidad
+    //Poner Alarma para los talleres de los lunes
 
-    void CalculateMinAndMaxHeigth (ParabolicMovement.ThrowDirections direction, ParabolicMovement buble)
-    {
-        switch (direction)
-        {
-            case ParabolicMovement.ThrowDirections.Left:
-                //Todo: With raycast2D get coordinates of walls and avoid it goes out of scenary (in all directions)
-                break;
-            case ParabolicMovement.ThrowDirections.Right:
-                break;
-            case ParabolicMovement.ThrowDirections.InFront:
-                break;
-            case ParabolicMovement.ThrowDirections.Back:
-                break;
-            default:
-                break;
-        }
-        
-    }
-
-    IEnumerator createBublesSlime()
+    IEnumerator createBublesSlimeRoutine()
     {
         while(_bublesCount > 0)
         {
             Vector3 bubleStartPosition = new Vector3(transform.position.x, transform.position.y + _colliderHeight, 1);
             GameObject buble = Instantiate(_bublePrefab, bubleStartPosition, Quaternion.identity);
+            buble.name = buble.name + _bublesCount;
             ParabolicMovement bubleMovement =  buble.GetComponent<ParabolicMovement>();
-            ParabolicMovement.ThrowDirections direction =  bubleMovement.GetRandomDirection();
+            bubleMovement.LimitsOffset = _wallsOffset;
+            bubleMovement.bottomOffset = _colliderHeight;
+            bubleMovement.SidesForce =  bubleMovement.SidesForce + bubleMovement.SidesForce * .5f;
+            //Random.Range(bubleMovement.SidesForce, bubleMovement.SidesForce + bubleMovement.SidesForce * .5f);
+            bubleMovement.StartMove();
             yield return new WaitForSeconds(_bublesTimeDelay);
+            _bublesCount--;
         }
+        _bublesCount = initialBublesCount;
     }
-
 }

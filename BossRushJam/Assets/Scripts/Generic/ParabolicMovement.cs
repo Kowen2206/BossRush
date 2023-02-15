@@ -7,19 +7,28 @@ using UnityEngine;
 public class ParabolicMovement : MonoBehaviour
 {
     [SerializeField] Transform _target;
-    [SerializeField] float _speed = 5f, upForce = 2;
+    [SerializeField] float _speed = 5f, _upTime = 2, _upForce = 4, _sidesForce = 1;
     Rigidbody2D _rigid;
     float _timer = 0, _maxYvalue = 7, _minYvalue = -7, _finalYvalue = 0;
-    [SerializeField] bool _moveOnStart = false;
+    [SerializeField] bool _moveOnStart = false, _useRandomDirection;
     bool _isMoving, _isFalling;
     [SerializeField] ThrowDirections _throwDirection;
     [SerializeField] int _backOrderInLayer, _frontOrderInLayer;
     SpriteRenderer _spriteRenderer;
     [SerializeField] float _minFallPosition, _maxFallPosition;
+    float _limitsOfsset;
     public static int _lastDirectionIndex = -1;
+    Vector3 _currentTrayectory,_lastPosition, _initialPosition;
+    public float bottomOffset = 0;
 
-    
-    public float MinFallPosition{
+
+    public float LimitsOffset
+    {
+        get => _limitsOfsset;
+        set => _limitsOfsset = value;
+    }
+    public float MinFallPosition
+    {
         get => _minFallPosition;
         set => _minFallPosition = value;
     }
@@ -29,44 +38,62 @@ public class ParabolicMovement : MonoBehaviour
         set => _maxFallPosition = value;
     }
 
+    public float SidesForce
+    {
+        get => _sidesForce;
+        set => _sidesForce = value;
+    }
+
+    public ThrowDirections Direction
+    {
+        get => _throwDirection;
+    }
     void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        if(_moveOnStart) _isMoving = true;
     }
 
-    //La trayectoría se obtiene de un constante movimiento en el eje x, ya sea positivo o negativo, pero en una sola dirección y otra fuerza constante hacía abajo que de apoco
-    //va debilitando la fuerza inicial hacia arriba.
+    void Start()
+    {
+        _initialPosition = transform.position;
+        if(_moveOnStart) 
+            _isMoving = true;
+    }
 
     public void StartMove()
     {
+        if(_useRandomDirection) _throwDirection = GetRandomDirection();
+        CalculateMinAndMaxFloorHeigth();
         _isMoving = true;
     }
 
     void Update()
     {
-        if(_timer <= upForce && _isMoving)
+        _currentTrayectory = transform.position - _lastPosition;
+        _currentTrayectory.Normalize();
+        if(_timer <= _upTime && _isMoving)
         {
             Throw();
             _timer += Time.deltaTime;
             
         }
         else
-        if(_timer > upForce && !_isFalling)
+        if(_timer > _upTime && !_isFalling)
         {
+            SetFallValue();
             _isMoving = false;
             _isFalling = true;
-            SetFallValue();
         }
 
-        if(_isFalling)
+        if(_isFalling && _currentTrayectory.y < 0)
         {
-            if(transform.position.z > _finalYvalue)
+            if(transform.position.y < _finalYvalue)
             {
                 _rigid.simulated = false;
             }
         }
+        _lastPosition = transform.position;
     }
 
     void Throw()
@@ -74,25 +101,45 @@ public class ParabolicMovement : MonoBehaviour
         switch (_throwDirection)
         {
             case ThrowDirections.Left:
-            _rigid.AddForce((Vector2.up * 4 + Vector2.left) * Time.deltaTime * _speed);
+            _rigid.AddForce((Vector2.up * _upForce + Vector2.left * _sidesForce) * Time.deltaTime * _speed);
                 break;
             case ThrowDirections.Right:
-            _rigid.AddForce((Vector2.up * 4 + Vector2.right) * Time.deltaTime * _speed);
+            _rigid.AddForce((Vector2.up * _upForce + Vector2.right * _sidesForce) * Time.deltaTime * _speed);
                 break;
             case ThrowDirections.InFront:
             _spriteRenderer.sortingOrder = _frontOrderInLayer;
-            _rigid.AddForce(Vector2.up * 4 * Time.deltaTime * _speed);
+            _rigid.AddForce(Vector2.up * _upForce * Time.deltaTime * _speed);
                 break;
             case ThrowDirections.Back:
             _spriteRenderer.sortingOrder = _backOrderInLayer;
-            _rigid.AddForce(Vector2.up * 4 * Time.deltaTime * _speed);
+            _rigid.AddForce(Vector2.up * _upForce * Time.deltaTime * _speed);
                 break;
             default:
                 break;
         }
     }
 
-    void SetFallValue()
+    void CalculateMinAndMaxFloorHeigth ()
+    {
+        if(_throwDirection == ThrowDirections.Back)
+        {
+            MaxFallPosition = LookForWalls._upWallPos.y - _limitsOfsset;
+            MinFallPosition = transform.position.y + 1;
+        }
+        else
+        if(_throwDirection == ThrowDirections.InFront)
+        {
+            MaxFallPosition = _initialPosition.y - bottomOffset;
+            MinFallPosition = LookForWalls._downWallPos.y - _limitsOfsset;
+        }
+        else
+        {
+            MaxFallPosition = LookForWalls._upWallPos.y - _limitsOfsset;
+            MinFallPosition = LookForWalls._downWallPos.y + _limitsOfsset;
+        }
+    }
+
+    public void SetFallValue()
     {
         _finalYvalue = Random.Range(_minFallPosition, _maxFallPosition + 1);
     }
@@ -104,7 +151,7 @@ public class ParabolicMovement : MonoBehaviour
         {
             randomIndex = Random.Range(0, 4);
         }
-        
+        _lastDirectionIndex = randomIndex;
         switch (randomIndex)
         {
             case 0:
@@ -121,12 +168,13 @@ public class ParabolicMovement : MonoBehaviour
         
     }
 
-    public enum ThrowDirections
+
+}
+
+public enum ThrowDirections
     {
         Left,
         Right,
         Back,
         InFront
     }
-
-}
