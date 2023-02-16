@@ -22,15 +22,12 @@ public class TrowSlimeBubles : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         initialBublesCount = _bublesCount;
         _collider = GetComponent<BoxCollider2D>();
         _colliderHeight = _collider.size.y;
     }
-    //checar becas de movilidad
-    //Poner Alarma para los talleres de los lunes
 
     IEnumerator createBublesSlimeRoutine()
     {

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class LookForWalls : MonoBehaviour
 {
-    public float floatHeight;     // Desired floating height.
-    public float liftForce;       // Force to apply when lifting the rigidbody.
-    public float damping;      // Force reduction proportional to speed (reduces bouncing).
     public static Vector3 _leftWallPos, _rightWallPos, _upWallPos, _downWallPos;
     Rigidbody2D rb2D;
 
@@ -26,9 +23,7 @@ public class LookForWalls : MonoBehaviour
 
     Vector3 ThrowRay(Vector3 direction)
     {
-        // Cast a ray straight down.
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 100);
-        // If it hits something...
         if (hit.collider != null)
         {
             return hit.collider.transform.position;

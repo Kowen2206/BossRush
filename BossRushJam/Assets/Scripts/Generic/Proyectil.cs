@@ -42,6 +42,7 @@ public class Proyectil : MonoBehaviour
         if(!customDirection) CalculateDirection();
         IsInTargetPosition = false;
         _shoot = true;
+        Debug.Log("Should be shot");
     }
 
     public Transform Target
