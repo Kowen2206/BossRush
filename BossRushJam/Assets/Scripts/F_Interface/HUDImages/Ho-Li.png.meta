@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,34 +117,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ho-Li_0
+      name: Ho-Li_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 28
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662f6a4fd9f473349bb15c5894ac4f8e
+      internalID: -1997235169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ho-Li_6
       rect:
         serializedVersion: 2
         x: 2
         y: 2
         width: 32
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c4352addc8936442a202204b5a1329e
-      internalID: 1958077564
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ho-Li_1
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 72
-        width: 26
-        height: 13
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,29 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ead34685c7533940813713099c19365
-      internalID: -1262154997
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ho-Li_2
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 72
-        width: 26
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aacee97ed5e56b54f9fa4c21c0bb9707
-      internalID: 768272368
+      spriteID: 5c3a79a495463024fa0fcd06c87fe872
+      internalID: -1257160857
       vertices: []
       indices: 
       edges: []
@@ -191,8 +170,14 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Ho-Li_0: 1958077564
+      Ho-Li_6: -1257160857
+      Ho-Li_7: -734680487
+      Ho-Li_4: -1363899788
       Ho-Li_1: -1262154997
       Ho-Li_2: 768272368
+      Ho-Li_8: 1101959380
+      Ho-Li_5: 334436605
+      Ho-Li_3: -1997235169
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
