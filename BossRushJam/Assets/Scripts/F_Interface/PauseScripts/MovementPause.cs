@@ -44,7 +44,7 @@ public class MovementPause : MonoBehaviour
     }
      IEnumerator PauseMenus()
     {
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(0.0f);
         Origins.SetActive(false);
         Settings1.SetActive(false);
     }

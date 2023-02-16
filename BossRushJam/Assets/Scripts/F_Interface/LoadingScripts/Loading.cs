@@ -88,15 +88,4 @@ public class Loading : MonoBehaviour
         StartCoroutine (Loadings());
     }
     
-
-
-
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

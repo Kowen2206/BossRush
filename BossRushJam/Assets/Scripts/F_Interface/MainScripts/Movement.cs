@@ -54,11 +54,5 @@ IEnumerator Inicial()
 public void Sonido()
 {
     fuente.Play();
-
 }
-
-
-
-
-
 }
