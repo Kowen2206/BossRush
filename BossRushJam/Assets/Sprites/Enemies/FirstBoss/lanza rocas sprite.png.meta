@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: adf3de0163ba0e84db361e392f720b82
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lanza rocas sprite_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 846
+        width: 231
+        height: 374
+      alignment: 9
+      pivot: {x: 0.515, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38857909d7360bc4db77e6b1a4f95522
+      internalID: 1034120105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_1
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 846
+        width: 319
+        height: 374
+      alignment: 9
+      pivot: {x: 0.375, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6273b6953fd6bc84e89fe8a97bb85170
+      internalID: 1300064828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_2
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 846
+        width: 276
+        height: 374
+      alignment: 9
+      pivot: {x: 0.432, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c5861ac3201324895d8fbe9f5e70fa
+      internalID: 1717023037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 846
+        width: 255
+        height: 374
+      alignment: 9
+      pivot: {x: 0.468, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763c08e9917181b4390504698c76e562
+      internalID: -769324579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_4
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 426
+        width: 274
+        height: 374
+      alignment: 9
+      pivot: {x: 0.436, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77305c31b5777754393166bebbb0eb24
+      internalID: -1025375716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_6
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 426
+        width: 294
+        height: 374
+      alignment: 9
+      pivot: {x: 0.405, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa68fd62e16b1f543967f8282b551a42
+      internalID: -1842883216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_8
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 426
+        width: 255
+        height: 374
+      alignment: 9
+      pivot: {x: 0.468, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b252c101930b8a64bbcc5e1848bdf9ba
+      internalID: 327281637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_9
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 427
+        width: 255
+        height: 374
+      alignment: 9
+      pivot: {x: 0.468, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4b063dba99cd7468996d2d9db78590
+      internalID: 73546304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_10
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 7
+        width: 273
+        height: 374
+      alignment: 9
+      pivot: {x: 0.403, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9446451658f814a8816d31c8b46435
+      internalID: 709137563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_11
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 6
+        width: 275
+        height: 374
+      alignment: 9
+      pivot: {x: 0.435, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3d8f81c123f9940991fec2e428bbd1
+      internalID: -352385974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_13
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 7
+        width: 286
+        height: 374
+      alignment: 9
+      pivot: {x: 0.417, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3de43bccf4b8804fabde42568a153e5
+      internalID: 1948567662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanza rocas sprite_14
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 6
+        width: 231
+        height: 374
+      alignment: 9
+      pivot: {x: 0.517, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c5ac65abcbfd24f9cee4293d92446c
+      internalID: 1749896353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      lanza rocas sprite_11: -352385974
+      lanza rocas sprite_7: 585427551
+      lanza rocas sprite_13: 1948567662
+      lanza rocas sprite_3: -769324579
+      lanza rocas sprite_2: 1717023037
+      lanza rocas sprite_12: 567024300
+      lanza rocas sprite_15: 424445932
+      lanza rocas sprite_6: -1842883216
+      lanza rocas sprite_14: 1749896353
+      lanza rocas sprite_0: 1034120105
+      lanza rocas sprite_5: 1427025801
+      lanza rocas sprite_9: 73546304
+      lanza rocas sprite_8: 327281637
+      lanza rocas sprite_1: 1300064828
+      lanza rocas sprite_4: -1025375716
+      lanza rocas sprite_10: 709137563
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

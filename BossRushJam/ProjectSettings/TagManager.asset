@@ -6,11 +6,19 @@ TagManager:
   tags:
   - Musicas
   - musicas
+  - FollowSwarm
+  - BeeShield
+  - collisionObject
+  - Boss
+  - Proyectil
+  - SwarmProyectil
+  - BossTrayectoryLine
+  - TrayectoryLine
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - navMeshSurface
   - Water
   - UI
   - 

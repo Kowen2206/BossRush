@@ -72,4 +72,4 @@
 	Every feature will have their own branch using the next nomenclature, this branchs will be merge just by a pull request
  
 
-    	FeatureFeatureName
+    	featureFeatureName
