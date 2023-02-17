@@ -7,39 +7,28 @@ public class PlayerPickUp : MonoBehaviour
     [SerializeField]
     private Transform _grabPoint;
 
-    private GameObject _grabbedObject;
-    private int layerIndex;
-    private bool _canPickUp=true;
-
+    private AnimationManager anim;
+    public GameObject ft;
 
     private void Start()
     {
-        layerIndex = LayerMask.NameToLayer("Object");
+        anim = FindObjectOfType<AnimationManager>();
     }
-
-  
-
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (_canPickUp == true && collision.tag == "Object" && Input.GetKeyDown(KeyCode.F))
+        if (collision.tag == "Mechero" && Input.GetKeyDown(KeyCode.Mouse1))
         {
-            _canPickUp = false;
-            _grabbedObject = collision.gameObject;
-            _grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
-            _grabbedObject.transform.position = _grabPoint.position;
-            _grabbedObject.transform.SetParent(transform);
-
+           
+            anim.tipoAtaque = 1;
+            ft.SetActive(true);
+            Destroy(collision);
         }
-    }
 
-    private void Update()
-    {
-        if (_canPickUp == false && Input.GetKey(KeyCode.F)&&Input.GetKey(KeyCode.Mouse0))
+        if (collision.tag == "Acido" && Input.GetKeyDown(KeyCode.Mouse1))
         {
-            _grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
-            _grabbedObject.transform.SetParent(null);
-            _grabbedObject = null;
-            _canPickUp = true;
+
+            anim.tipoAtaque = 2;
+            Destroy(collision);
         }
     }
 

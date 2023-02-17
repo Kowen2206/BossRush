@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashingCooldown = 1f;
     private float _dashingTime = 0.4f;
 
+    public bool isWalking = false;
 
 
     void Update()
@@ -32,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         rb.velocity = movement * movementSpeed;
-        PlayerRotation();
+        //PlayerRotation();
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash == true)
         {
@@ -51,6 +52,15 @@ public class PlayerMovement : MonoBehaviour
         float movementY = Input.GetAxisRaw("Vertical");
 
         movement = new Vector2(movementX, movementY).normalized;
+
+        if(movementX!=0 ||movementY!=0)
+        {
+            isWalking = true;
+        }
+        else
+        {
+            isWalking = false;
+        }
     }
 
     private void PlayerRotation()

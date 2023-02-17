@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Object
+  - Enemy
+  - triggerDerecha
+  - Mechero
+  - Acido
   layers:
   - Default
   - TransparentFX
