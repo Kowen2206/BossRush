@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
+
 
 
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
@@ -20,7 +22,8 @@ public class ParabolicMovement : MonoBehaviour
     public static int _lastDirectionIndex = -1;
     Vector3 _currentTrayectory,_lastPosition, _initialPosition;
     public float bottomOffset = 0;
-
+    public delegate void OnPlaceAction(Vector3 position);
+    public OnPlaceAction onGetInFloor;
 
     public float LimitsOffset
     {
@@ -91,6 +94,8 @@ public class ParabolicMovement : MonoBehaviour
             if(transform.position.y < _finalYvalue)
             {
                 _rigid.simulated = false;
+                onGetInFloor?.Invoke(transform.position);
+                GetComponent<DestroyObject>().DestroyWithDelay(.5f);
             }
         }
         _lastPosition = transform.position;

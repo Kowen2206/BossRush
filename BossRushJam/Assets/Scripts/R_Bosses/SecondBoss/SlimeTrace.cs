@@ -10,6 +10,8 @@ public class SlimeTrace : MonoBehaviour
     [SerializeField] float _slimeOffset = 2, _distanceToDisappear = 30;
     [SerializeField] List<Vector3> _slimeVertexsPositions = new List<Vector3>();
     [SerializeField] CreateColliderBetweenPoints _collidersCreator;
+    [SerializeField] int _maxSlimeCount = 8;
+    [SerializeField] GameObject _residue;
     List<GameObject> _createdColliders = new List<GameObject>();
     void Awake()
     {
@@ -41,8 +43,9 @@ public class SlimeTrace : MonoBehaviour
             );
         }
 
-        if(Vector3.Distance(_line.GetPosition(0), transform.position) > _distanceToDisappear)
+        if(Vector3.Distance(_line.GetPosition(0), transform.position) > _distanceToDisappear || _slimeVertexsPositions.Count > _maxSlimeCount)
         {
+            if(_residue)Instantiate(_residue, _slimeVertexsPositions[0], Quaternion.identity);
             _slimeVertexsPositions.RemoveAt(0);
             _line.positionCount = _slimeVertexsPositions.Count;
             _line.SetPositions(_slimeVertexsPositions.ToArray());

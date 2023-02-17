@@ -12,6 +12,8 @@ TagManager:
   - SwarmProyectil
   - BossTrayectoryLine
   - TrayectoryLine
+  - Item
+  - BossCopy
   layers:
   - Default
   - TransparentFX

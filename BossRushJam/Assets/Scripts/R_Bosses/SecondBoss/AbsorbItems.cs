@@ -1,31 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AbsorbItems : MonoBehaviour
 {
     [SerializeField] string _targetItemId;
+    [SerializeField] int _targetItemsCount;
+    [SerializeField] float _absortionSpeed;
+    int _currentItemsCount;
+    [SerializeField] bool _isLookingForItems;
+    [SerializeField] UnityEvent OnFinishAbsorb;
     
-    // Start is called before the first frame update
-    void Start()
+    public bool IsLookingForItems
     {
-        
+        get => _isLookingForItems;
+        set => _isLookingForItems = value;
+    }
+    // Start is called before the first frame update
+    void StartAbsorbtion()
+    {
+        _isLookingForItems = true;
     }
 
-    // Update is called once per frame
-    void LoockNearestObjects()
+    void Update()
     {
-        GameObject[] items = GameObject.FindGameObjectsWithTag(_targetItemId);
-        GameObject[] distantObjects, nearObjects;
-        float distance = Vector3.Distance(items[0].transform.position, transform.position);
-        for (int i = 0;  i < items.Length; i++)
+        if(_isLookingForItems)
+        transform.localScale += Vector3.one * 2 * Time.deltaTime;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag(_targetItemId) && _isLookingForItems && _currentItemsCount < _targetItemsCount)
         {
-            if(Vector3.Distance(items[0].transform.position, transform.position) < distance)
+            Proyectil proyectil = other.gameObject.AddComponent<Proyectil>();
+            proyectil.Stop();
+            proyectil.TargetId = transform.parent.tag;
+            proyectil.ProyectilSpeed = _absortionSpeed;
+            proyectil.StopInTargetPosition = true;
+            proyectil.StartShoot();
+            if(_currentItemsCount == _targetItemsCount)
             {
-                //distantObjects[i] =  
+                _isLookingForItems = false;
+                OnFinishAbsorb?.Invoke();
             }
+            _currentItemsCount++;
         }
-        
-        
     }
 }
