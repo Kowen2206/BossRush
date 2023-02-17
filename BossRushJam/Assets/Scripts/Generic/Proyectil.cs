@@ -24,6 +24,10 @@ public class Proyectil : MonoBehaviour
     public float Damage { get => _damage; set => _damage = value;  }
     public bool IsInTargetPosition {get; set;}
     public bool DrawTrayectoryLine {get => _drawTrayectoryLine; set => _drawTrayectoryLine = value;}
+    public bool StopInTargetPosition
+    {
+       get => _stopInTargetPosition; set => _stopInTargetPosition = value;
+    }
     
     void Start()
     {
@@ -42,12 +46,15 @@ public class Proyectil : MonoBehaviour
         if(!customDirection) CalculateDirection();
         IsInTargetPosition = false;
         _shoot = true;
+        Debug.Log(gameObject.name + "Should be shot");
     }
 
-    public Transform Target
+    public string TargetId
     {
-        get; set;
-    }
+        get => targetTag; set{
+            Debug.Log("QueMierda");
+            targetTag = value;
+    }}
 
     public void CalculateDirection()
     {

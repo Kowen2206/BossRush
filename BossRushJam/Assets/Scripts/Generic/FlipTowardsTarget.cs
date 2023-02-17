@@ -15,6 +15,7 @@ public class FlipTowardsTarget : MonoBehaviour
     {
         _lastPosition = transform.position;
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        if(!_target) _target = GameObject.FindGameObjectWithTag("Player").transform;
     }
     
     public bool LookingAtTarget
