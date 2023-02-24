@@ -6,6 +6,7 @@ public class FlipTowardsTarget : MonoBehaviour
 {
     [SerializeField] Transform _target;
     [SerializeField] bool _toggleDirection, _lookingAtTarget = true;
+    [SerializeField] string _targetId = "Player";
     Vector3 _lastPosition;
     SpriteRenderer _spriteRenderer;
     
@@ -15,7 +16,7 @@ public class FlipTowardsTarget : MonoBehaviour
     {
         _lastPosition = transform.position;
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        if(!_target) _target = GameObject.FindGameObjectWithTag("Player").transform;
+        if(!_target) _target = GameObject.FindGameObjectWithTag(_targetId).transform;
     }
     
     public bool LookingAtTarget
@@ -49,8 +50,8 @@ public class FlipTowardsTarget : MonoBehaviour
     void CalculateFlipDirection(Vector3 pointA, Vector3 pointB)
     {
         if(pointA.x - pointB.x > 0)
-                 _spriteRenderer.flipX = _toggleDirection? true : false;
-            else
-                _spriteRenderer.flipX = _toggleDirection? false : true;
+            _spriteRenderer.flipX = _toggleDirection? true : false;
+        else
+            _spriteRenderer.flipX = _toggleDirection? false : true;
     }
 }

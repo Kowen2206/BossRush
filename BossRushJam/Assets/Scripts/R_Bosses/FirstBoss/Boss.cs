@@ -10,6 +10,8 @@ public class Boss : MonoBehaviour
     //Todo: Crear función para detener attaques en seco.
     //Configurar velocidad en función del ataque
     //Agregar sonidos
+    [SerializeField] HealtController _healtController;
+
     [SerializeField] protected  NavMeshAgent _agent;
     //TargetPlace represents the coordinates in the world where the boss have to arrive.
     //_keyPointsCoordinatesParent is a gameObject parent of a especific points in the map, they are used to select random positions on the map
@@ -36,7 +38,7 @@ public class Boss : MonoBehaviour
     [SerializeField] protected List<GameObject> _currentProyectils = new List<GameObject>();
     TrayectoryLine _trayectoryLine;
     [SerializeField] GameObject _line;
-
+   
     
     //This method must be called in the Start Method of every child
     protected void InitialiceBoos()
@@ -166,10 +168,11 @@ public class Boss : MonoBehaviour
     }
 
     //This metod will be called by the event OnReciveDamage in HealtController.
-    protected void CheckPhase(float healtPercentage)
+    public void CheckPhase()
     {
-        if(healtPercentage < 70)  _currentPhase = 1;
-        if(healtPercentage < 40) _currentPhase = 2;
+      float healtPercentage =_healtController.GetHealtPercentage();
+        if(healtPercentage < 90)  _currentPhase = 1;
+        if(healtPercentage < 85) _currentPhase = 2;
     }
 
     //If is necesary, Boss will set a specific distance with the player in order to prepare to attack 
@@ -288,11 +291,7 @@ public class Boss : MonoBehaviour
 
     public void UseTrayectoryLine()
     {
-        //_line.transform.position = new Vector3(transform.position.x + 0.76f, transform.position.y, 1);
-        //_line.transform.localPosition = new Vector3(0, 0, 1);
         _trayectoryLine.enabled = true;
-        
-       // _trayectoryLine.StartGrowing();
     }
 
     public void HideTrayectoryLine()

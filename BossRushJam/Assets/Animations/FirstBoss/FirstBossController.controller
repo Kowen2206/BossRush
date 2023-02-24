@@ -169,10 +169,10 @@ AnimatorStateMachine:
     m_Position: {x: 230, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2175752126536831235}
-    m_Position: {x: -20, y: -50, z: 0}
+    m_Position: {x: 0, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5841495259058964629}
-    m_Position: {x: 220, y: -50, z: 0}
+    m_Position: {x: 240, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4121169501858001670}
     m_Position: {x: 770, y: 110, z: 0}
@@ -184,25 +184,25 @@ AnimatorStateMachine:
     m_Position: {x: 510, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5885589522885956290}
-    m_Position: {x: 400, y: 260, z: 0}
+    m_Position: {x: 420, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2564447780867871659}
-    m_Position: {x: -50, y: 250, z: 0}
+    m_Position: {x: -30, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 326650742959115788}
-    m_Position: {x: 180, y: 260, z: 0}
+    m_Position: {x: 200, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5131713003262472807}
-    m_Position: {x: -210, y: 150, z: 0}
+    m_Position: {x: -250, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5537639369488018929}
-    m_Position: {x: -210, y: 90, z: 0}
+    m_Position: {x: -250, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5206155976055890881}
     m_Position: {x: -250, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2019468981298139444}
-    m_Position: {x: -220, y: 30, z: 0}
+    m_Position: {x: -250, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -389634734732394067}
     m_Position: {x: 480, y: -210, z: 0}
@@ -218,7 +218,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 810, y: 240, z: 0}
-  m_EntryPosition: {x: -190, y: 210, z: 0}
+  m_EntryPosition: {x: -220, y: 200, z: 0}
   m_ExitPosition: {x: 810, y: 280, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -6599374530405421942}
@@ -683,55 +683,55 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsRunning
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsSpinning
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsThrowingRock
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsTackling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsJumpping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsThrowingUpBees
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsThrowingClaws
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Recovered
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

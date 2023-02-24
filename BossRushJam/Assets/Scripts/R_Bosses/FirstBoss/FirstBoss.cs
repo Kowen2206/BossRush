@@ -49,8 +49,6 @@ public class FirstBoss : Boss
     //Select a random attack from  the attack List
     override public void  ChoseRandomAttack()
     {
-        //Todo: Proof swarm attack and make the bee shield and the vertical and horizontal attack
-        //string nextAttack = attacksFase1[UnityEngine.Random.Range(0, attacksFase1.Count)];
         string nextAttack = GetAttackNameByPhase();
         Debug.Log("NextAttack" + nextAttack);
         switch (nextAttack)

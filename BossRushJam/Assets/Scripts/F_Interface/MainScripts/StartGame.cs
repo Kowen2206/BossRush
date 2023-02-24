@@ -9,6 +9,6 @@ public class StartGame : MonoBehaviour
    public void Play()
    {
     Debug.Log("Iniciando juego");
-    SceneManager.LoadScene("FirstBoss");
+    SceneManager.LoadScene("LoadingScene");
    }
 }

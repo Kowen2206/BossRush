@@ -6,31 +6,62 @@ using UnityEngine;
 public class MakeDamage : MonoBehaviour
 {
     [SerializeField] string _targetId;
+    [SerializeField] List<string> _multipleTargetsId = new List<string>();
     [SerializeField] float _damage;
     [SerializeField] bool _isTrigger = true;
     [SerializeField] bool _isKinematic = true;
-    // Start is called before the first frame update
+    [SerializeField] bool _makeConstantDamage;
+    [SerializeField] bool _makingDamage = true;
+
+    public bool MakingDamage
+    {
+        get => _makingDamage; 
+        set{
+            Debug.Log("MakingDamage");
+            _makingDamage = value;
+            }
+    }
+    public float Damage
+    {
+        get => _damage; set => _damage = value;
+    }
+
+    public bool MakeConstantDamageOnStay{get => _makeConstantDamage; set => _makeConstantDamage = value;}
+
     void Awake()
     {
         GetComponent<Rigidbody2D>().isKinematic = _isKinematic;
         GetComponent<BoxCollider2D>().isTrigger = _isTrigger;
+        _multipleTargetsId.Add(_targetId);
     }
 
-
-    // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag(_targetId))
+        
+        foreach(string target in _multipleTargetsId)
         {
-            other.gameObject.GetComponent<HealtController>().decreaseHealt(_damage);
+            
+            if(other.CompareTag(target) && _makingDamage)
+            {
+                Debug.Log("TriggerENTER" + target);
+                other.gameObject.GetComponent<HealtController>().decreaseHealt(_damage);
+                _makingDamage = false;
+            }
         }
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.CompareTag(_targetId))
+
+        if(_makeConstantDamage)
+        foreach(string target in _multipleTargetsId)
         {
-            other.gameObject.GetComponent<HealtController>().decreaseHealt(_damage);
+           if(other.CompareTag(target) && _makingDamage)
+            {
+                Debug.Log("TriggerSTAY" + target);
+                other.gameObject.GetComponent<HealtController>().decreaseHealt(_damage);
+                _makingDamage = false;
+            }
         }
     }
 }

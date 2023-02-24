@@ -16,6 +16,7 @@ TagManager:
   - TrayectoryLine
   - Item
   - BossCopy
+  - Weapon
   layers:
   - Default
   - TransparentFX

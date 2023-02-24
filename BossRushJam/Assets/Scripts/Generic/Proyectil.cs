@@ -46,13 +46,11 @@ public class Proyectil : MonoBehaviour
         if(!customDirection) CalculateDirection();
         IsInTargetPosition = false;
         _shoot = true;
-        Debug.Log(gameObject.name + "Should be shot");
     }
 
     public string TargetId
     {
         get => targetTag; set{
-            Debug.Log("QueMierda");
             targetTag = value;
     }}
 
@@ -81,12 +79,10 @@ public class Proyectil : MonoBehaviour
             {
                 transform.position += _direction * _proyectilSpeed * Time.deltaTime;
                 _remainingDuration -= Time.deltaTime;
-                Debug.Log(gameObject.name + "shouldMove");
             }
         }
         if(_stopInTargetPosition && Vector3.Distance(_targetPosition, transform.position) < .5f && _shoot)
         {
-            Debug.Log("MiediendoEsta");
            Stop();
            OnGetInTargetPosition?.Invoke();
         }
@@ -94,11 +90,12 @@ public class Proyectil : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag(targetTag))
         {
             OnImpact?.Invoke();
-            HealtController playerHealt = other.gameObject.GetComponent<HealtController>();
-            playerHealt.decreaseHealt(_damage);
+            HealtController targetHealt = other.gameObject.GetComponent<HealtController>();
+            if(targetHealt)
+            targetHealt.decreaseHealt(_damage);
             Stop();
         }
         else
