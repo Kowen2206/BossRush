@@ -17,13 +17,25 @@ public class WeaponController : MonoBehaviour
     
     public void CreateWeapon(WeaponsList type, Vector3 position, float weaponHealt = 100)
     {
+        Weapon weapon =  GetWeapon(type);
+        Weapon _usedWeapon =  Instantiate(weapon, position, Quaternion.identity);
+              _usedWeapon.Durability = weaponHealt;
+    }
+
+    public Weapon GetWeapon(WeaponsList type)
+    {
         foreach (Weapon weapon in _weapons)
         {
             if(weapon.WeaponTye == type)
             {
-              Weapon _usedWeapon =  Instantiate(weapon, position, Quaternion.identity);
-              _usedWeapon.Durability = weaponHealt;
+              return weapon;
             }
         }
+        return null;
+    }
+
+    public Sprite GetWeaponImage(WeaponsList type)
+    {
+         return  GetWeapon(type).WeaponImage;
     }
 }

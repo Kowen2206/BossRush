@@ -10,6 +10,7 @@ public class HealtController : MonoBehaviour
      float _healtPercentage;
     [SerializeField] UnityEvent OnDie;
     [SerializeField] UnityEvent OnRecoverHealt, OnReciveDamage;
+    [SerializeField] UnityEvent<float> OnChangeHealtPercentage;
     public bool canReciveDamage = true;
 
     public float CurrentHealt
@@ -17,9 +18,15 @@ public class HealtController : MonoBehaviour
         get => _currentHealt;
     }
     
+    public bool CanReciveDamage
+    {
+        get => canReciveDamage;
+        set => canReciveDamage = value;
+    }
     void Start()
     {
         _currentHealt = _initialHealt;
+        OnChangeHealtPercentage?.Invoke(GetHealtPercentage());
     }
 
    public void decreaseHealt(float damage)
@@ -32,6 +39,7 @@ public class HealtController : MonoBehaviour
             _currentHealt = _minHealt;
             OnDie?.Invoke();
         }
+        OnChangeHealtPercentage?.Invoke(GetHealtPercentage());
    }
 
    public void IncreaseHealt(float helat)
@@ -42,11 +50,13 @@ public class HealtController : MonoBehaviour
         {
             _currentHealt = _initialHealt;
         }
+        OnChangeHealtPercentage?.Invoke(GetHealtPercentage());
    }
 
    public float GetHealtPercentage()
    {
-        _healtPercentage = _currentHealt * 100/ _initialHealt;
+        
+        _healtPercentage = _currentHealt * 1/ _initialHealt;
         return _healtPercentage;
    }
 }

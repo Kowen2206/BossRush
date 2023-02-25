@@ -50,7 +50,6 @@ public class FirstBoss : Boss
     override public void  ChoseRandomAttack()
     {
         string nextAttack = GetAttackNameByPhase();
-        Debug.Log("NextAttack" + nextAttack);
         switch (nextAttack)
         {
             

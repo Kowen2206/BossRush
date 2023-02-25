@@ -41,7 +41,6 @@ public class RandomMovement : MonoBehaviour
             i++;
             if(i > 52)
             {
-                Debug.Log("Ooops");
                 break;
             }
             targetPosition = new Vector2(Random.Range(referenceCoordinate.x - movementAreaSize.x / 2, referenceCoordinate.x + movementAreaSize.x / 2),

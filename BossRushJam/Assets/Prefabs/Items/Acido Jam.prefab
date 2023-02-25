@@ -124,11 +124,13 @@ MonoBehaviour:
   _itemMessage: Press F to take  the acid cannon
   triggerActive: 1
   _weaponType: 1
-  _baseDamage: 7
+  _damage: 0
+  _image: {fileID: 21300000, guid: a096d815d64393b41b47b9e94059ee17, type: 3}
   _moveOnAttack: 1
   _decreaseBySecond: 0
   _durability: 100
   _decrementPercentage: 1
+  _makeConstantDamage: 0
 --- !u!58 &4947688542142638214
 CircleCollider2D:
   m_ObjectHideFlags: 0

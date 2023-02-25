@@ -12,15 +12,17 @@ public class MakeDamage : MonoBehaviour
     [SerializeField] bool _isKinematic = true;
     [SerializeField] bool _makeConstantDamage;
     [SerializeField] bool _makingDamage = true;
+    [SerializeField] bool _useCollisionsInsteadTrigger;
 
     public bool MakingDamage
     {
         get => _makingDamage; 
-        set{
-            Debug.Log("MakingDamage");
-            _makingDamage = value;
-            }
+        set =>_makingDamage = value;
     }
+
+    public void EnableMakingDamage() => _makingDamage = true;
+    public void DisableMakingDamage() => _makingDamage = false;
+    
     public float Damage
     {
         get => _damage; set => _damage = value;
@@ -37,31 +39,38 @@ public class MakeDamage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        
-        foreach(string target in _multipleTargetsId)
-        {
-            
-            if(other.CompareTag(target) && _makingDamage)
-            {
-                Debug.Log("TriggerENTER" + target);
-                other.gameObject.GetComponent<HealtController>().decreaseHealt(_damage);
-                _makingDamage = false;
-            }
-        }
+        if(_useCollisionsInsteadTrigger) return;
+        SetDamage(other);
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
+        if(_useCollisionsInsteadTrigger) return;
+        if(_makeConstantDamage) SetDamage(other);
+    }
 
-        if(_makeConstantDamage)
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(!_useCollisionsInsteadTrigger) return;
+        SetDamage(other.collider);
+    }
+
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if(!_useCollisionsInsteadTrigger) return;
+        if(_makeConstantDamage) SetDamage(other.collider);
+    }
+
+    void SetDamage(Collider2D other)
+    {
+        
         foreach(string target in _multipleTargetsId)
         {
            if(other.CompareTag(target) && _makingDamage)
             {
-                Debug.Log("TriggerSTAY" + target);
                 other.gameObject.GetComponent<HealtController>().decreaseHealt(_damage);
-                _makingDamage = false;
             }
         }
     }
+
 }

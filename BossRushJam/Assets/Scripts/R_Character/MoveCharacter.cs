@@ -9,11 +9,11 @@ public class MoveCharacter : MonoBehaviour
     //Todo: Hacer que el personaje ataque en la ultima dirección que quedo viendo
     SpriteRenderer _spriteRenderer;
     [SerializeField] float _moveSpeed, _attackSpeed, _dashSpeed = 25, _dashDuration;
-    [SerializeField] float _defaultMoveSpeed, _dashCounter, _dashWaitDuration = 4;
-    float _hMove, _vMove;
+    [SerializeField] float _defaultMoveSpeed, _deafultDashDuration, _dashCounter, _dashWaitDuration = 4;
+    float _hMove, _vMove, _remainingDashWaitDuration;
     bool isMoving, _dashing;
     Vector3 _lastPosition = Vector3.zero;
-    [SerializeField] UnityEvent OnWalk, OnStay;
+    [SerializeField] UnityEvent OnWalk, OnStay, OnDash, OnStopDash;
     public Vector3 _hDirection = Vector3.right, _vDirection = Vector3.up;
     Rigidbody2D _rigid;
 
@@ -25,6 +25,8 @@ public class MoveCharacter : MonoBehaviour
     void Start()
     {
         _defaultMoveSpeed = _moveSpeed;
+        _deafultDashDuration = _dashDuration;
+        _dashDuration = 0;
     }
 
     //Each weapon can define the speed of the character while Attack
@@ -79,9 +81,9 @@ public class MoveCharacter : MonoBehaviour
             _dashing = true;
             
         }
-        
-        SetDash();
         UpdateDashVariables();
+        SetDash();
+        
 
         _lastPosition = transform.position;
         
@@ -89,31 +91,40 @@ public class MoveCharacter : MonoBehaviour
 
     void SetDash()
     {
-        if(_dashCounter < _dashDuration && _dashing)
+        if(_dashDuration > 0 && _dashing)
         {
+            if(_dashDuration == _deafultDashDuration) {OnDash?.Invoke();}
             Vector3 dashDirection = transform.position - _lastPosition; 
-            _moveSpeed = _dashSpeed;   
+            _moveSpeed = _dashSpeed; 
             MoveTowards(dashDirection);
             _moveSpeed = _defaultMoveSpeed;
-            _dashCounter += Time.deltaTime;
+            _dashDuration -= Time.deltaTime;
+            UIGamePlayController.instance.UpdateDashBar(_dashDuration);
+            if(_dashDuration <= 0) {OnStopDash?.Invoke();_remainingDashWaitDuration = _dashWaitDuration;}
         }
-        
-        
     }
 
     void UpdateDashVariables()
     {
-        if(_dashCounter >= _dashDuration)
+        if(_dashDuration < _deafultDashDuration && _remainingDashWaitDuration >= 0)
+        {
+            _dashing = false;
+            _remainingDashWaitDuration -= Time.deltaTime;
+            FillDashUI();
+            if(_remainingDashWaitDuration < 0)
             {
-                _dashing = false;
-                _dashWaitDuration -= Time.deltaTime;
-                if(_dashWaitDuration < 0)
-                {
-                    _dashCounter = 0;
-                    _dashWaitDuration = 4;
-                }
+                _dashDuration = _deafultDashDuration;
+                FillDashUI();
             }
+        }
     }
+
+    void FillDashUI()
+    {
+       float percentage = _remainingDashWaitDuration/_dashWaitDuration;
+       UIGamePlayController.instance.UpdateDashBar(percentage);
+    }
+
     void MoveTowards(Vector3 direction)
     {
         if(_moveSpeed != 0)

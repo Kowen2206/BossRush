@@ -17,7 +17,6 @@ public class CharacterAttacks : MonoBehaviour
     
     [SerializeField] MakeDamage _characterDamageColliderLeft, _characterDamageColliderRight;
     public float Damage{ get => _damage; }
-
     void Awake()
     {
         _weaponDurability = GetComponent<WeponDurability>();
@@ -135,8 +134,9 @@ public class CharacterAttacks : MonoBehaviour
         _weaponDurability._decrementPercentage = _lastWeaponInRange.DecrementPercentage;
         _weaponDurability._decreaseBySecond = _lastWeaponInRange.DecreaseBySecond;
         _damage = _lastWeaponInRange.Damage;
+        UIGamePlayController.instance.SetSelectedItem(_currentWeaponType);
         SetDamage();
-        _lastWeaponInRange.GetComponent<DestroyObject>().DestroyWithDelay(.2f);
+        _lastWeaponInRange.GetComponent<DestroyObject>().DestroyWithDelay(.02f);
         _lastWeaponInRange = null;
         
     }

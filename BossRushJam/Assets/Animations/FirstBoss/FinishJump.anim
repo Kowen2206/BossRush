@@ -95,4 +95,25 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5
+    functionName: EnableMakingDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5833333
+    functionName: set_Damage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 5
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.1666666
+    functionName: set_Damage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.01
+    intParameter: 0
+    messageOptions: 0

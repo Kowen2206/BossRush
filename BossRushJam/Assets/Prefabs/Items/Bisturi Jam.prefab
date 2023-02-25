@@ -140,11 +140,13 @@ MonoBehaviour:
   _itemMessage: Press F to take the scalpel
   triggerActive: 1
   _weaponType: 3
-  _baseDamage: 5
+  _damage: 0
+  _image: {fileID: 21300000, guid: 2baf42d6a3a29a9409ede94cb5441bea, type: 3}
   _moveOnAttack: 0
   _decreaseBySecond: 0
   _durability: 100
   _decrementPercentage: 1
+  _makeConstantDamage: 0
 --- !u!114 &133727772
 MonoBehaviour:
   m_ObjectHideFlags: 0

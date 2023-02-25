@@ -8,7 +8,8 @@ public class UIGamePlayController : MonoBehaviour
 {
     public static UIGamePlayController instance;
     [SerializeField] TextMeshProUGUI _smallMessageText;
-    [SerializeField] Image _HealtBar;
+    [SerializeField] Image _healtBar, _dashBar, _selectedItem;
+    
     void Awake()
     {
         if(instance == null)
@@ -19,7 +20,6 @@ public class UIGamePlayController : MonoBehaviour
         {
             Destroy(this);
         }
-
         _smallMessageText.text = "";
     }
     
@@ -31,4 +31,26 @@ public class UIGamePlayController : MonoBehaviour
     {
         _smallMessageText.text = "";
     }
+
+
+    public void UpdateHealtBar(float percentage)
+    {
+        ModifyStatusBar(_healtBar, percentage);
+    }
+    public void UpdateDashBar(float percentage)
+    {
+        
+        ModifyStatusBar(_dashBar, percentage);
+    }
+
+    public void ModifyStatusBar(Image bar, float percentage)
+    {
+        bar.fillAmount = percentage;
+    }
+
+    public void SetSelectedItem(WeaponsList weapon)
+    {
+      _selectedItem.sprite = WeaponController.instance.GetWeaponImage(weapon);
+    }
 }
+

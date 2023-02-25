@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 [RequireComponent(typeof(CircleCollider2D), typeof(Rigidbody2D))]
 public class Weapon : Item
 {
     [SerializeField] WeaponsList _weaponType;
     [SerializeField] float _damage;
+    [SerializeField] Sprite _image;
     float _baseDamage = 5;
     CircleCollider2D _collider;
     Rigidbody2D _rigid;
     [SerializeField] bool _moveOnAttack, _decreaseBySecond;
     [SerializeField] float _durability = 100f, _decrementPercentage;
     [SerializeField] bool _makeConstantDamage;
+    Sprite _sprite;
     
     public bool MakeConstantDamage{ get => _makeConstantDamage;}
 
     public bool MoveOnAttack{ get => _moveOnAttack;}
+    public Sprite Sprite{ get => _sprite;}
+    public Sprite WeaponImage { get => _image; }
 
     public float WeaponDurability{ get => _durability; set => _durability = value; }
 
@@ -35,5 +40,6 @@ public class Weapon : Item
             _rigid.isKinematic = true;
             _collider = GetComponent<CircleCollider2D>();
             _collider.isTrigger = true;
+            _sprite = GetComponent<Sprite>();
     }
 }

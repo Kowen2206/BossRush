@@ -13,6 +13,10 @@ GameObject:
   - component: {fileID: -4793295133881496042}
   - component: {fileID: 557648791986460666}
   - component: {fileID: 4781439679058280017}
+  - component: {fileID: 3534504331052761894}
+  - component: {fileID: 6282069486049254308}
+  - component: {fileID: 9180949505317984294}
+  - component: {fileID: 7707827287391918692}
   m_Layer: 0
   m_Name: BeesPivot
   m_TagString: Untagged
@@ -149,6 +153,89 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &3534504331052761894
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557648791986460671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.34
+--- !u!50 &6282069486049254308
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557648791986460671}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &9180949505317984294
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557648791986460671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.2, y: 0.2}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.2}
+  m_EdgeRadius: 0
+--- !u!114 &7707827287391918692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557648791986460671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f959665957b5a084b904b0e8128e4d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetId: Player
+  _multipleTargetsId: []
+  _damage: 0
+  _isTrigger: 1
+  _isKinematic: 1
+  _makeConstantDamage: 0
+  _makingDamage: 1
+  _useCollisionsInsteadTrigger: 0
 --- !u!1 &1484784762803256648
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,11 +245,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2861434719462645114}
-  - component: {fileID: 5060069328450733007}
   - component: {fileID: 5058731832227693842}
-  - component: {fileID: 8986338429842623917}
   - component: {fileID: 1437615432383246074}
-  - component: {fileID: 428108554860525613}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (1)
   m_TagString: FollowSwarm
@@ -178,25 +262,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484784762803256648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7, y: -0.42, z: -0.2561172}
+  m_LocalPosition: {x: 1.84, y: -0.42, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5060069328450733007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484784762803256648}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &5058731832227693842
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -249,31 +321,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8986338429842623917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484784762803256648}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &1437615432383246074
 Animator:
   serializedVersion: 4
@@ -294,28 +341,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &428108554860525613
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484784762803256648}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391949565562962
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,11 +350,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681223352135776}
-  - component: {fileID: 2501435607998607061}
   - component: {fileID: 2502349499398514696}
-  - component: {fileID: 1746265673229983927}
   - component: {fileID: 8610169791206933472}
-  - component: {fileID: 7025309919413179703}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (10)
   m_TagString: FollowSwarm
@@ -345,25 +367,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391949565562962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.05, y: -1.38, z: -0.2561172}
+  m_LocalPosition: {x: -2.56, y: -0.86, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435607998607061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949565562962}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349499398514696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -416,31 +426,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265673229983927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949565562962}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169791206933472
 Animator:
   serializedVersion: 4
@@ -461,28 +446,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309919413179703
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949565562962}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391949660929606
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,11 +455,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681223372250740}
-  - component: {fileID: 2501435607905337537}
   - component: {fileID: 2502349499430946332}
-  - component: {fileID: 1746265673470299811}
   - component: {fileID: 8610169791300464116}
-  - component: {fileID: 7025309919441435427}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (2)
   m_TagString: FollowSwarm
@@ -519,18 +479,6 @@ Transform:
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435607905337537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949660929606}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349499430946332
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -583,31 +531,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265673470299811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949660929606}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169791300464116
 Animator:
   serializedVersion: 4
@@ -628,28 +551,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309919441435427
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949660929606}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391949758439924
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,11 +560,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681223545258438}
-  - component: {fileID: 2501435608342601587}
   - component: {fileID: 2502349499054512558}
-  - component: {fileID: 1746265673037238545}
   - component: {fileID: 8610169790863209030}
-  - component: {fileID: 7025309919606056081}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (9)
   m_TagString: FollowSwarm
@@ -679,25 +577,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391949758439924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.29, y: -3.53, z: -0.2561172}
+  m_LocalPosition: {x: -1.32, y: -2.7, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435608342601587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949758439924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349499054512558
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -750,31 +636,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265673037238545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949758439924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169790863209030
 Animator:
   serializedVersion: 4
@@ -795,28 +656,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309919606056081
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949758439924}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391949824483616
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,11 +665,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681223611236626}
-  - component: {fileID: 2501435608278753191}
   - component: {fileID: 2502349499124717946}
-  - component: {fileID: 1746265672971063749}
   - component: {fileID: 8610169790927123090}
-  - component: {fileID: 7025309919672034373}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (6)
   m_TagString: FollowSwarm
@@ -846,25 +682,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391949824483616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.87, y: -1.22, z: -0.2561172}
+  m_LocalPosition: {x: 0.44, y: -0.82, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435608278753191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949824483616}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349499124717946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -917,31 +741,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265672971063749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949824483616}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169790927123090
 Animator:
   serializedVersion: 4
@@ -962,28 +761,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309919672034373
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391949824483616}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391950023392701
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,11 +770,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681223700831631}
-  - component: {fileID: 2501435608079844154}
   - component: {fileID: 2502349499219805671}
-  - component: {fileID: 1746265673141390680}
   - component: {fileID: 8610169791126810127}
-  - component: {fileID: 7025309919771326680}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (14)
   m_TagString: FollowSwarm
@@ -1013,25 +787,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391950023392701}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.77, y: 2.3, z: -0.2561172}
+  m_LocalPosition: {x: 1.82, y: 2.08, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435608079844154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950023392701}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349499219805671
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1084,31 +846,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265673141390680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950023392701}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169791126810127
 Animator:
   serializedVersion: 4
@@ -1129,28 +866,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309919771326680
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950023392701}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391950150345181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,11 +875,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681223837024751}
-  - component: {fileID: 2501435607413301082}
   - component: {fileID: 2502349499886819719}
-  - component: {fileID: 1746265672745472312}
   - component: {fileID: 8610169790718767727}
-  - component: {fileID: 7025309918823556280}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (7)
   m_TagString: FollowSwarm
@@ -1180,25 +892,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391950150345181}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.78, y: -3.73, z: -0.2561172}
+  m_LocalPosition: {x: 1.33, y: -2.44, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435607413301082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950150345181}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349499886819719
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1251,31 +951,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265672745472312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950150345181}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169790718767727
 Animator:
   serializedVersion: 4
@@ -1296,28 +971,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309918823556280
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950150345181}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391950177117697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,11 +980,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681223930840627}
-  - component: {fileID: 2501435607386593414}
   - component: {fileID: 2502349499977555547}
-  - component: {fileID: 1746265672920028900}
   - component: {fileID: 8610169790746588595}
-  - component: {fileID: 7025309918918419300}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (3)
   m_TagString: FollowSwarm
@@ -1347,25 +997,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391950177117697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.45, y: 0.61, z: -0.2561172}
+  m_LocalPosition: {x: -0.98, y: 0.21, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435607386593414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950177117697}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349499977555547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1418,31 +1056,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265672920028900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950177117697}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169790746588595
 Animator:
   serializedVersion: 4
@@ -1463,28 +1076,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309918918419300
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950177117697}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391950323820401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,11 +1085,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681224069220163}
-  - component: {fileID: 2501435607776696822}
   - component: {fileID: 2502349499587387179}
-  - component: {fileID: 1746265672504760212}
   - component: {fileID: 8610169790356419779}
-  - component: {fileID: 7025309919065186836}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (12)
   m_TagString: FollowSwarm
@@ -1514,25 +1102,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391950323820401}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.73, y: 2.56, z: -0.2561172}
+  m_LocalPosition: {x: -1.35, y: 2, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435607776696822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950323820401}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349499587387179
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1585,31 +1161,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265672504760212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950323820401}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169790356419779
 Animator:
   serializedVersion: 4
@@ -1630,28 +1181,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309919065186836
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950323820401}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391950760020644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,11 +1190,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681224438327958}
-  - component: {fileID: 2501435608951108643}
   - component: {fileID: 2502349500493361918}
-  - component: {fileID: 1746265674551589441}
   - component: {fileID: 8610169790255749398}
-  - component: {fileID: 7025309918360539073}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (4)
   m_TagString: FollowSwarm
@@ -1681,25 +1207,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391950760020644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.51, y: -1.5, z: -0.2561172}
+  m_LocalPosition: {x: -1.64, y: -1.77, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435608951108643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950760020644}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349500493361918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1752,31 +1266,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265674551589441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950760020644}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169790255749398
 Animator:
   serializedVersion: 4
@@ -1797,28 +1286,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309918360539073
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950760020644}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391950794700164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,11 +1295,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681224540100022}
-  - component: {fileID: 2501435608918526723}
   - component: {fileID: 2502349500595129822}
-  - component: {fileID: 1746265674449929569}
   - component: {fileID: 8610169790288324150}
-  - component: {fileID: 7025309918462324961}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (13)
   m_TagString: FollowSwarm
@@ -1848,25 +1312,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391950794700164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.12, y: 3.19, z: -0.2561172}
+  m_LocalPosition: {x: 0.14, y: 2.31, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435608918526723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950794700164}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349500595129822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1919,31 +1371,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265674449929569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950794700164}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169790288324150
 Animator:
   serializedVersion: 4
@@ -1964,28 +1391,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309918462324961
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950794700164}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391950948883224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,11 +1400,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681224635513642}
-  - component: {fileID: 2501435609299215775}
   - component: {fileID: 2502349500145312578}
-  - component: {fileID: 1746265674094423037}
   - component: {fileID: 8610169789907699882}
-  - component: {fileID: 7025309918549335677}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (5)
   m_TagString: FollowSwarm
@@ -2015,25 +1417,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391950948883224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13, y: -3.9, z: -0.2561172}
+  m_LocalPosition: {x: -0.05, y: -2.81, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435609299215775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950948883224}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349500145312578
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2086,31 +1476,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265674094423037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950948883224}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169789907699882
 Animator:
   serializedVersion: 4
@@ -2131,28 +1496,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309918549335677
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391950948883224}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391951209753079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,11 +1505,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681224929200581}
-  - component: {fileID: 2501435608501933936}
   - component: {fileID: 2502349500975550893}
-  - component: {fileID: 1746265673800390930}
   - component: {fileID: 8610169789629872709}
-  - component: {fileID: 7025309917769034898}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (15)
   m_TagString: FollowSwarm
@@ -2182,25 +1522,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391951209753079}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.26, y: 0.91, z: -0.2561172}
+  m_LocalPosition: {x: 2.68, y: 0.39, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435608501933936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951209753079}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349500975550893
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2253,31 +1581,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265673800390930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951209753079}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169789629872709
 Animator:
   serializedVersion: 4
@@ -2298,28 +1601,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309917769034898
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951209753079}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391951372136077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2329,11 +1610,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681225150566079}
-  - component: {fileID: 2501435608878485514}
   - component: {fileID: 2502349500672399063}
-  - component: {fileID: 1746265673570901608}
   - component: {fileID: 8610169789253582143}
-  - component: {fileID: 7025309917998525416}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (8)
   m_TagString: FollowSwarm
@@ -2349,25 +1627,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391951372136077}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.14, y: -3.07, z: -0.2561172}
+  m_LocalPosition: {x: 2.21, y: -2.27, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435608878485514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951372136077}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349500672399063
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2420,31 +1686,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265673570901608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951372136077}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169789253582143
 Animator:
   serializedVersion: 4
@@ -2465,28 +1706,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309917998525416
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951372136077}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391951442540745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,11 +1715,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681225229097211}
-  - component: {fileID: 2501435608806016590}
   - component: {fileID: 2502349500742762643}
-  - component: {fileID: 1746265673500493868}
   - component: {fileID: 8610169789325781883}
-  - component: {fileID: 7025309918068932012}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (11)
   m_TagString: FollowSwarm
@@ -2516,25 +1732,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391951442540745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.38, y: 0.61, z: -0.2561172}
+  m_LocalPosition: {x: -2.61, y: 0.43, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435608806016590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951442540745}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349500742762643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2587,31 +1791,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265673500493868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951442540745}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169789325781883
 Animator:
   serializedVersion: 4
@@ -2632,28 +1811,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309918068932012
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951442540745}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8076391951584863660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,11 +1820,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4844681225338389918}
-  - component: {fileID: 2501435608663137067}
   - component: {fileID: 2502349500851576310}
-  - component: {fileID: 1746265673659635017}
   - component: {fileID: 8610169789468669470}
-  - component: {fileID: 7025309918177697993}
   m_Layer: 0
   m_Name: abejas movement sprite_0 (16)
   m_TagString: FollowSwarm
@@ -2683,25 +1837,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076391951584863660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.86, y: -1.6, z: -0.2561172}
+  m_LocalPosition: {x: 2.59, y: -1.08, z: -0.2561172}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 557648791986460668}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2501435608663137067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951584863660}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92758f70d2dd1b47819551c82a05b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2502349500851576310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2754,31 +1896,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1746265673659635017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951584863660}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5a1fe6a25441a4c930df7d940710a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealt: 0
-  _minHealt: 0
-  _initialHealt: 1
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRecoverHealt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReciveDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  canReciveDamage: 1
 --- !u!95 &8610169789468669470
 Animator:
   serializedVersion: 4
@@ -2799,25 +1916,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7025309918177697993
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076391951584863660}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.67
-  m_BaseOffset: 0.835
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4

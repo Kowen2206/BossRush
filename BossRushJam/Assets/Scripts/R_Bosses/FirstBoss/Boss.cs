@@ -171,8 +171,8 @@ public class Boss : MonoBehaviour
     public void CheckPhase()
     {
       float healtPercentage =_healtController.GetHealtPercentage();
-        if(healtPercentage < 90)  _currentPhase = 1;
-        if(healtPercentage < 85) _currentPhase = 2;
+        if(healtPercentage < .7)  _currentPhase = 1;
+        if(healtPercentage < .35) _currentPhase = 2;
     }
 
     //If is necesary, Boss will set a specific distance with the player in order to prepare to attack 
@@ -192,7 +192,6 @@ public class Boss : MonoBehaviour
         }
         else
         {
-            Debug.Log("ShouldStartNextAttack");
             FinishAttackDelegate = null;
             onPlaceActionDelegate = null;
             onPlaceActionDelegate = ChoseRandomAttack;

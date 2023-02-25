@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 119233218}
   - component: {fileID: 119233219}
   - component: {fileID: 119233220}
+  - component: {fileID: 119233221}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Boss
@@ -499,7 +500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119233207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4, y: -5.77, z: 0}
+  m_LocalPosition: {x: 2.91, y: -5.77, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -683,6 +684,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 119233220}
+        m_TargetAssemblyTypeName: HealtController, Assembly-CSharp
+        m_MethodName: set_CanReciveDamage
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnWalk:
     m_PersistentCalls:
       m_Calls:
@@ -772,7 +785,19 @@ MonoBehaviour:
         m_CallState: 2
   OnStartJump:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 119233220}
+        m_TargetAssemblyTypeName: HealtController, Assembly-CSharp
+        m_MethodName: set_CanReciveDamage
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnThrowProyectil:
     m_PersistentCalls:
       m_Calls:
@@ -1192,7 +1217,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnChangeHealtPercentage:
+    m_PersistentCalls:
+      m_Calls: []
   canReciveDamage: 1
+--- !u!114 &119233221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119233207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f959665957b5a084b904b0e8128e4d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetId: Player
+  _multipleTargetsId: []
+  _damage: 0.01
+  _isTrigger: 1
+  _isKinematic: 1
+  _makeConstantDamage: 1
+  _makingDamage: 1
+  _useCollisionsInsteadTrigger: 0
 --- !u!1 &135428730
 GameObject:
   m_ObjectHideFlags: 0
@@ -18216,7 +18264,7 @@ GameObject:
   - component: {fileID: 156169228}
   - component: {fileID: 156169227}
   m_Layer: 5
-  m_Name: Image
+  m_Name: WeaponImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28708,7 +28756,7 @@ GameObject:
   - component: {fileID: 267606435}
   - component: {fileID: 267606434}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31970,6 +32018,7 @@ MonoBehaviour:
   _isKinematic: 1
   _makeConstantDamage: 0
   _makingDamage: 0
+  _useCollisionsInsteadTrigger: 0
 --- !u!61 &421351466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32421,7 +32470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.98181707, b: 0.0990566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -32599,7 +32648,7 @@ GameObject:
   - component: {fileID: 816922790}
   - component: {fileID: 816922789}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Percentage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32638,7 +32687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9433962, g: 0.9385757, b: 0, a: 1}
+  m_Color: {r: 0.11894804, g: 0.31132078, b: 0.25670564, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -32650,9 +32699,9 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &816922790
@@ -33136,6 +33185,7 @@ GameObject:
   - component: {fileID: 1063875695}
   - component: {fileID: 1063875698}
   - component: {fileID: 1063875699}
+  - component: {fileID: 1063875700}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -33157,9 +33207,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 7
   _attackSpeed: 0
-  _dashSpeed: 350
+  _dashSpeed: 200
   _dashDuration: 0.2
   _defaultMoveSpeed: 0
+  _deafultDashDuration: 0
   _dashCounter: 0
   _dashWaitDuration: 4
   OnWalk:
@@ -33184,6 +33235,36 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CharacterAnimations, Assembly-CSharp
         m_MethodName: Run
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDash:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1063875700}
+        m_TargetAssemblyTypeName: CharacterEffects, Assembly-CSharp
+        m_MethodName: EnableIsGhosting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStopDash:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1063875700}
+        m_TargetAssemblyTypeName: CharacterEffects, Assembly-CSharp
+        m_MethodName: DisableIsGhosting
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -33650,6 +33731,21 @@ MonoBehaviour:
   OnReciveDamage:
     m_PersistentCalls:
       m_Calls: []
+  OnChangeHealtPercentage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1844691399}
+        m_TargetAssemblyTypeName: UIGamePlayController, Assembly-CSharp
+        m_MethodName: UpdateHealtBar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   canReciveDamage: 1
 --- !u!114 &1063875698
 MonoBehaviour:
@@ -33690,6 +33786,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1063875700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063875686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc104d90fc30944888cd1c54cfce5fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 0}
+  playerCollider: {fileID: 0}
+  blinkOnStart: 0
+  _ghostingOnStart: 0
+  destroyGosth: 1
+  _blinkDelay: 0.2
+  _ghostDelaydispeal: 10
+  _ghostDelayDuration: 1
+  _normalColor: {r: 1, g: 1, b: 1, a: 1}
+  _blinklColor: {r: 0, g: 0, b: 0, a: 0}
+  _ghostColor: {r: 1, g: 1, b: 1, a: 0.2}
+  _ghostDistance: 0.2
+  _ghostScale: 1
+  _blinkCount: 2
+  _maxGhostCount: 20
 --- !u!1 &1089436347
 GameObject:
   m_ObjectHideFlags: 0
@@ -33756,7 +33879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 36.3, y: 0}
+  m_AnchoredPosition: {x: 36.30005, y: 0}
   m_SizeDelta: {x: 548.4, y: 204.7}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1145306102
@@ -35339,8 +35462,8 @@ Transform:
   m_GameObject: {fileID: 1193955583}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0416667, y: 1.0416667, z: 1.0416667}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.85, y: 2.85, z: 2.85}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 421351464}
   m_RootOrder: 0
@@ -35437,6 +35560,7 @@ MonoBehaviour:
   _isKinematic: 1
   _makeConstantDamage: 1
   _makingDamage: 1
+  _useCollisionsInsteadTrigger: 0
 --- !u!61 &1193955588
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50512,8 +50636,8 @@ Transform:
   m_GameObject: {fileID: 1448567160}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0416667, y: 1.0416667, z: 1.0416667}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.85, y: 2.85, z: 2.85}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2122735481}
   m_RootOrder: 0
@@ -50610,6 +50734,7 @@ MonoBehaviour:
   _isKinematic: 1
   _makeConstantDamage: 1
   _makingDamage: 1
+  _useCollisionsInsteadTrigger: 0
 --- !u!61 &1448567165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51018,7 +51143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _smallMessageText: {fileID: 2099862371}
-  _HealtBar: {fileID: 0}
+  _healtBar: {fileID: 1902316269}
+  _dashBar: {fileID: 816922789}
+  _selectedItem: {fileID: 156169227}
 --- !u!114 &1844691400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51204,7 +51331,7 @@ GameObject:
   - component: {fileID: 1902316270}
   - component: {fileID: 1902316269}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Percentage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51649,6 +51776,7 @@ MonoBehaviour:
   _isKinematic: 1
   _makeConstantDamage: 0
   _makingDamage: 0
+  _useCollisionsInsteadTrigger: 0
 --- !u!61 &2122735483
 BoxCollider2D:
   m_ObjectHideFlags: 0

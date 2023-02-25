@@ -140,11 +140,13 @@ MonoBehaviour:
   _itemMessage: Press F to take the flame thrower
   triggerActive: 1
   _weaponType: 2
-  _baseDamage: 5
+  _damage: 0
+  _image: {fileID: 21300000, guid: 6fb759bca2e5eb04faadd4351f9838be, type: 3}
   _moveOnAttack: 1
   _decreaseBySecond: 1
   _durability: 100
   _decrementPercentage: 1
+  _makeConstantDamage: 0
 --- !u!114 &1214719993
 MonoBehaviour:
   m_ObjectHideFlags: 0
