@@ -17,6 +17,7 @@ TagManager:
   - Item
   - BossCopy
   - Weapon
+  - ItemBox
   layers:
   - Default
   - TransparentFX

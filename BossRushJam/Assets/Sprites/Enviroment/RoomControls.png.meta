@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd64cc99b58d5ea40b4ec03630fc283d
+guid: 5e5507fb7769aa74db7a1e4adae7fa22
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,43 +129,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: puertass de eleavdor_0
+      name: RoomControls_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 14
-        width: 42
-        height: 96
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 132
+        y: 387
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0245376c91f09074ca99084095d23d17
-      internalID: 1669139308
+      spriteID: 905b78c9771cbe347a5730d2707b10bd
+      internalID: -677403490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puertass de eleavdor_1
+      name: RoomControls_1
       rect:
         serializedVersion: 2
-        x: 77
-        y: 14
-        width: 42
-        height: 96
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 555
+        y: 53
+        width: 279
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d939aae9c2162544af0a646fb3b5ec4
-      internalID: -75462189
+      spriteID: a792331b64817fa4096ca13fd5c1af89
+      internalID: -1636739399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomControls_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 256
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a66bba3482d2634ba5e9525c803a3a4
+      internalID: 43876778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomControls_3
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 256
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8955aa223249c4bb59a525b65926e0
+      internalID: -242344184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomControls_4
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 256
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa13f6fe58c81a4bbefa1710bdd785c
+      internalID: -446858936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomControls_5
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 91
+        width: 354
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df3402304043134cb5a191d6ad529ad
+      internalID: -237819329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomControls_6
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 102
+        width: 109
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff7656f7f6330e41afe00824ca6bb8e
+      internalID: -1468460341
       vertices: []
       indices: 
       edges: []
@@ -181,8 +286,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      puertass de eleavdor_1: -75462189
-      puertass de eleavdor_0: 1669139308
+      RoomControls_2: 43876778
+      RoomControls_6: -1468460341
+      RoomControls_5: -237819329
+      RoomControls_3: -242344184
+      RoomControls_0: -677403490
+      RoomControls_4: -446858936
+      RoomControls_1: -1636739399
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

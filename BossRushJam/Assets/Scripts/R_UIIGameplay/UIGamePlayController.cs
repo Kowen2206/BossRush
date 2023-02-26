@@ -8,6 +8,7 @@ public class UIGamePlayController : MonoBehaviour
 {
     public static UIGamePlayController instance;
     [SerializeField] TextMeshProUGUI _smallMessageText;
+    [SerializeField] GameObject _smallMessageBackground;
     [SerializeField] Image _healtBar, _dashBar, _selectedItem;
     
     void Awake()
@@ -25,10 +26,12 @@ public class UIGamePlayController : MonoBehaviour
     
     public void ShowSmallMessage(string message)
     {
+        _smallMessageBackground.SetActive(true);
         _smallMessageText.text = message;
     }
     public void HideSmallMessage()
     {
+        _smallMessageBackground.SetActive(false);
         _smallMessageText.text = "";
     }
 

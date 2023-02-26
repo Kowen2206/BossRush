@@ -16,7 +16,7 @@ public class FlipTowardsTarget : MonoBehaviour
     {
         _lastPosition = transform.position;
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        if(!_target) _target = GameObject.FindGameObjectWithTag(_targetId).transform;
+        if(!_target) _target = GameObject.FindGameObjectWithTag(_targetId)?.transform;
     }
     
     public bool LookingAtTarget
@@ -36,7 +36,7 @@ public class FlipTowardsTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_lookingAtTarget)
+        if(_lookingAtTarget && _target)
         {
             CalculateFlipDirection(transform.position, _target.position);
         }

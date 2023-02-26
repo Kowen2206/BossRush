@@ -13,7 +13,9 @@ public class MakeDamage : MonoBehaviour
     [SerializeField] bool _makeConstantDamage;
     [SerializeField] bool _makingDamage = true;
     [SerializeField] bool _useCollisionsInsteadTrigger;
+    bool _didHit;
 
+    public bool SetDidHitFalse() => _didHit = false;
     public bool MakingDamage
     {
         get => _makingDamage; 
@@ -46,7 +48,7 @@ public class MakeDamage : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
         if(_useCollisionsInsteadTrigger) return;
-        if(_makeConstantDamage) SetDamage(other);
+        if(_makeConstantDamage || !_didHit){_didHit = true; SetDamage(other);}
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -58,16 +60,18 @@ public class MakeDamage : MonoBehaviour
     void OnCollisionStay2D(Collision2D other)
     {
         if(!_useCollisionsInsteadTrigger) return;
-        if(_makeConstantDamage) SetDamage(other.collider);
+        if(_makeConstantDamage || !_didHit) {_didHit = true; SetDamage(other.collider);}
     }
 
     void SetDamage(Collider2D other)
     {
+        Debug.Log("MakingDamage " + other.name);
         
         foreach(string target in _multipleTargetsId)
         {
            if(other.CompareTag(target) && _makingDamage)
             {
+                Debug.Log("MakingDamage to " + target);
                 other.gameObject.GetComponent<HealtController>().decreaseHealt(_damage);
             }
         }

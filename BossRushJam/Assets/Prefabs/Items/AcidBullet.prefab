@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3064516378096098709}
   - component: {fileID: 3064516378096098708}
   - component: {fileID: 3064516378096098711}
+  - component: {fileID: 7524231045433768498}
   - component: {fileID: 3064516378096098710}
   - component: {fileID: 3064516378096098697}
   m_Layer: 0
@@ -174,6 +175,28 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _autoDestroy: 0
+--- !u!114 &7524231045433768498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064516378096098696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f959665957b5a084b904b0e8128e4d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetId: Boss
+  _multipleTargetsId:
+  - ItemBox
+  - BossCopy
+  _damage: 5
+  _isTrigger: 1
+  _isKinematic: 1
+  _makeConstantDamage: 0
+  _makingDamage: 1
+  _useCollisionsInsteadTrigger: 0
 --- !u!114 &3064516378096098710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +219,7 @@ MonoBehaviour:
   customDirection: 1
   _proyectilSpeed: 15
   _proyectilDuration: 25
-  _damage: 10
+  _damage: 0
   OnAutoDestroy:
     m_PersistentCalls:
       m_Calls: []

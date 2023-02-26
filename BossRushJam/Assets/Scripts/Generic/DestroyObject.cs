@@ -16,8 +16,9 @@ public class DestroyObject : MonoBehaviour
 
     public void DestroyWithDelay(float delay = 0){
         if(delay != 0) _destroyDelay = delay;
-         Destroy(gameObject, _destroyDelay);
-         OnDestroy?.Invoke();
+        OnDestroy?.Invoke();
+        Destroy(gameObject, _destroyDelay);
+         
     }
 
 }

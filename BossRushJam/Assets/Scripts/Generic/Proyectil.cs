@@ -34,14 +34,14 @@ public class Proyectil : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         GetComponent<BoxCollider2D>().isTrigger = true;
         if(_drawTrayectoryLine) CreateLine();
-        _target = GameObject.FindGameObjectWithTag(targetTag).transform;
+        _target = GameObject.FindGameObjectWithTag(targetTag)?.transform;
         if(_shootOnStart) StartShoot();
     }
     
     public void StartShoot()
     {
         if(_drawTrayectoryLine) DestroyLine();
-        if(!_target) _target = GameObject.FindGameObjectWithTag(targetTag).transform;
+        if(!_target) _target = GameObject.FindGameObjectWithTag(targetTag)?.transform;
         _remainingDuration = _proyectilDuration;
         if(!customDirection) CalculateDirection();
         IsInTargetPosition = false;

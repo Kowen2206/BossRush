@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4947688542142638213}
   - component: {fileID: 4947688542142638214}
   - component: {fileID: 1706857203}
+  - component: {fileID: -4025170627783152636}
   m_Layer: 0
   m_Name: Acido Jam
   m_TagString: Weapon
@@ -146,7 +147,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.3
 --- !u!114 &1706857203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,3 +165,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _autoDestroy: 0
+--- !u!114 &-4025170627783152636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947688542142638215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26ec06cbcbcdef49973e1f1b56d33d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetsId: []
+  _sprite: {fileID: 0}
+  _minTargetDistance: 4
